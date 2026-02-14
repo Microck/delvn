@@ -9,7 +9,7 @@ from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponen
 
 _RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 DEFAULT_TIMEOUT_SECONDS = 10.0
-DEFAULT_USER_AGENT = "threat-fusion/0.1.0"
+DEFAULT_USER_AGENT = "delvn/0.1.0"
 
 
 def _should_retry(exc: BaseException) -> bool:

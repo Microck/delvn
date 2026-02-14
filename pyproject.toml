@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "threat-fusion"
+name = "delvn"
 version = "0.1.0"
-description = "Multi-agent CTI platform that correlates threat feeds"
+description = "Delvn: multi-agent CTI pipeline for correlated threat triage"
 requires-python = ">=3.11"
 dependencies = [
   "pydantic>=2",

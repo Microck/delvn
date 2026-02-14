@@ -202,7 +202,7 @@ def _print_dry_run(config: DemoConfig, config_path: Path) -> None:
 
 
 def _temporary_stack_file(stack: dict[str, list[str]]) -> Path:
-    temp_dir = tempfile.mkdtemp(prefix="threat-fusion-demo-")
+    temp_dir = tempfile.mkdtemp(prefix="delvn-demo-")
     stack_path = Path(temp_dir) / "stack.yaml"
     stack_path.write_text(yaml.safe_dump(stack, sort_keys=False), encoding="utf-8")
     return stack_path
@@ -295,7 +295,7 @@ def _run_live_pipeline(config: DemoConfig) -> int:
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run the Threat Fusion demo pipeline.")
+    parser = argparse.ArgumentParser(description="Run the Delvn demo pipeline.")
     parser.add_argument(
         "--config",
         default=str(ROOT / "demo" / "config.yaml"),

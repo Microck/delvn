@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
     COSMOS_ENDPOINT: str | None = None
     COSMOS_KEY: str | None = None
-    COSMOS_DATABASE: str = "threat-fusion"
+    COSMOS_DATABASE: str = "delvn"
     COSMOS_CONTAINER_THREATS: str = "threats"
     COSMOS_CONTAINER_CORRELATIONS: str = "correlations"
 

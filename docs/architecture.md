@@ -1,8 +1,8 @@
-# IntelMosaic Architecture
+# Delvn Architecture
 
 ## Purpose
 
-IntelMosaic is a batch-oriented, multi-agent cyber threat intelligence pipeline. It ingests signals from three source families, correlates related activity, prioritizes risk against a declared stack profile, and emits an executive markdown brief for security and leadership review.
+Delvn is a batch-oriented, multi-agent cyber threat intelligence pipeline. It ingests signals from three source families, correlates related activity, prioritizes risk against a declared stack profile, and emits an executive markdown brief for security and leadership review.
 
 ## Components And Agent Roles
 
@@ -59,7 +59,7 @@ Structured output consumed by markdown rendering.
 
 ### Azure Cosmos DB
 
-- Database: `threat-fusion`
+- Database: `delvn`
 - Container: `threats` (partition key `/source`)
 - Container: `correlations` (partition key `/id`)
 
@@ -85,7 +85,7 @@ Structured output consumed by markdown rendering.
 
 ## Enterprise Value Story (How To Explain It)
 
-IntelMosaic maps directly to a security operations workflow:
+Delvn maps directly to a security operations workflow:
 
 1. **Signal ingestion** from vulnerability, intel, and news channels.
 2. **Correlation** to reduce isolated alert noise into linked threat narratives.

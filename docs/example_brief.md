@@ -4,7 +4,7 @@ _Generated: 2026-02-14T19:20:00Z_
 
 ## Executive Summary
 
-Threat Fusion correlated CVE, OTX, and security news signals into a focused risk view for an Apache/PostgreSQL/React stack. The highest-risk items cluster around internet-facing Apache exposure and credential-harvesting campaigns targeting developer portals. Immediate patch and monitoring actions can materially reduce near-term risk.
+Delvn correlated CVE, OTX, and security news signals into a focused risk view for an Apache/PostgreSQL/React stack. The highest-risk items cluster around internet-facing Apache exposure and credential-harvesting campaigns targeting developer portals. Immediate patch and monitoring actions can materially reduce near-term risk.
 
 ## Top Risks
 
@@ -57,4 +57,4 @@ Threat Fusion correlated CVE, OTX, and security news signals into a focused risk
 1. Execute emergency patch and mitigation plan for Apache-critical findings.
 2. Run a focused detection sprint on listed IOCs across edge, app, and identity telemetry.
 3. Validate PostgreSQL hardening controls and close any privilege gaps.
-4. Re-run Threat Fusion after mitigation to confirm risk reduction trends.
+4. Re-run Delvn after mitigation to confirm risk reduction trends.

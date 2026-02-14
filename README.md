@@ -1,6 +1,6 @@
-# IntelMosaic (Threat Fusion)
+# Delvn
 
-IntelMosaic is a multi-agent cyber threat intelligence pipeline that turns noisy CVE, threat intel, and security news feeds into a prioritized executive brief tailored to your stack. It is designed for fast enterprise triage: collect signals, correlate related activity, rank what matters, and generate a concise brief leadership can act on.
+Delvn is a multi-agent cyber threat intelligence pipeline that turns noisy CVE, threat intel, and security news feeds into a prioritized executive brief tailored to your stack. It is designed for fast enterprise triage: collect signals, correlate related activity, rank what matters, and generate a concise brief leadership can act on.
 
 ## Why This Matters
 
