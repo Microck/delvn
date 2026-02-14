@@ -2,40 +2,36 @@ from __future__ import annotations
 
 from functools import lru_cache
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_env: str = "dev"
-    log_level: str = "INFO"
+    APP_ENV: str = "dev"
+    LOG_LEVEL: str = "INFO"
 
-    # Cosmos DB
-    cosmos_endpoint: str | None = None
-    cosmos_key: str | None = None
-    cosmos_database: str = "threat-fusion"
-    cosmos_container_threats: str = "threats"
-    cosmos_container_correlations: str = "correlations"
+    COSMOS_ENDPOINT: str | None = None
+    COSMOS_KEY: str | None = None
+    COSMOS_DATABASE: str = "threat-fusion"
+    COSMOS_CONTAINER_THREATS: str = "threats"
+    COSMOS_CONTAINER_CORRELATIONS: str = "correlations"
 
-    # Azure AI Search
-    search_endpoint: str | None = None
-    search_key: str | None = None
-    search_index_threats: str = "threats"
+    SEARCH_ENDPOINT: str | None = None
+    SEARCH_KEY: str | None = None
+    SEARCH_INDEX_THREATS: str = "threats"
 
-    # Embeddings
-    embedding_dim: int = 1536
+    EMBEDDING_DIM: int = Field(default=1536)
 
-    # Source API keys (optional)
-    nvd_api_key: str | None = None
-    otx_api_key: str | None = None
+    NVD_API_KEY: str | None = None
+    OTX_API_KEY: str | None = None
 
-    # Foundry / Azure OpenAI (optional; Phase 1 uses mock-friendly scaffolding)
-    foundry_endpoint: str | None = None
-    foundry_api_key: str | None = None
+    FOUNDRY_ENDPOINT: str | None = None
+    FOUNDRY_API_KEY: str | None = None
 
-    azure_openai_endpoint: str | None = None
-    azure_openai_api_key: str | None = None
-    azure_openai_embedding_deployment: str | None = None
-    azure_openai_api_version: str | None = None
+    AZURE_OPENAI_ENDPOINT: str | None = None
+    AZURE_OPENAI_API_KEY: str | None = None
+    AZURE_OPENAI_EMBEDDING_DEPLOYMENT: str | None = None
+    AZURE_OPENAI_API_VERSION: str | None = None
 
     model_config = SettingsConfigDict(
         env_file=".env",
