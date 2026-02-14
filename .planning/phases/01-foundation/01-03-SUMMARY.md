@@ -22,7 +22,7 @@ tech-stack:
 
 key-files:
   created: [src/storage/__init__.py, src/storage/cosmos.py, src/storage/search.py, scripts/smoke_azure_storage.py, infra/foundry_config.yaml, tests/test_storage_clients_smoke.py, .planning/phases/01-foundation/01-03-SUMMARY.md]
-  modified: [src/storage/__init__.py]
+  modified: [.planning/STATE.md]
 
 key-decisions:
   - "Use `/source` partition key for threats and `/id` for correlations to keep threat writes simple while allowing correlation bootstrap."
