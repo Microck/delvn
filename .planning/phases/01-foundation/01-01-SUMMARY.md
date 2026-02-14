@@ -76,7 +76,7 @@ Each task was committed atomically:
 ## Decisions Made
 - Used uppercase `Settings` fields so runtime access aligns directly with environment variable names from the plan.
 - Kept HTTP helper scope intentionally small (`build_client`, `get_json`) to avoid premature abstraction.
-- Verified inside `/tmp/threat-fusion-venv` because host Python enforces PEP 668 managed-environment pip restrictions.
+- Verified inside `/tmp/delvn-venv` because host Python enforces PEP 668 managed-environment pip restrictions.
 
 ## Deviations from Plan
 
@@ -85,9 +85,9 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Switched verification to temporary virtualenv**
 - **Found during:** Task 1 (Add Python project config)
 - **Issue:** `python3 -m pip install -e .` failed due externally managed environment, and creating `.venv/` in workspace failed with permission errors.
-- **Fix:** Created `/tmp/threat-fusion-venv` and ran install/test verification commands there.
+- **Fix:** Created `/tmp/delvn-venv` and ran install/test verification commands there.
 - **Files modified:** None (execution environment only)
-- **Verification:** `/tmp/threat-fusion-venv/bin/python -m pip install -e .` and `/tmp/threat-fusion-venv/bin/python -m pytest -q` both succeeded.
+- **Verification:** `/tmp/delvn-venv/bin/python -m pip install -e .` and `/tmp/delvn-venv/bin/python -m pytest -q` both succeeded.
 - **Committed in:** N/A (environment/runtime adjustment)
 
 ---
@@ -96,7 +96,7 @@ Each task was committed atomically:
 **Impact on plan:** No scope change; only verification execution context changed to unblock required checks.
 
 ## Issues Encountered
-- System Python blocks direct pip installs (PEP 668) and local `.venv` creation was not permitted in this workspace; both were resolved by using `/tmp/threat-fusion-venv` for validation.
+- System Python blocks direct pip installs (PEP 668) and local `.venv` creation was not permitted in this workspace; both were resolved by using `/tmp/delvn-venv` for validation.
 
 ## User Setup Required
 None - no external service configuration required.

@@ -38,7 +38,7 @@ def _run_cosmos_smoke() -> None:
         "id": threat_id,
         "source": "smoke",
         "type": "smoke-test",
-        "title": "Threat Fusion smoke threat",
+        "title": "Delvn smoke threat",
         "raw": {"kind": "smoke"},
     }
     store.upsert_threat(document)

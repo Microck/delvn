@@ -85,7 +85,7 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Recreated isolated Python verification environment**
 - **Found during:** Task 1 verification
 - **Issue:** System `python3` could not import project modules and package installation was blocked by PEP 668 externally managed environment.
-- **Fix:** Created `/tmp/threat-fusion-venv`, installed project dependencies there, and reran verification commands with the venv on `PATH`.
+- **Fix:** Created `/tmp/delvn-venv`, installed project dependencies there, and reran verification commands with the venv on `PATH`.
 - **Files modified:** None (environment-only fix)
 - **Verification:** `python3 -c` imports succeeded and `python3 -m pytest -q` passed in the venv context.
 - **Committed in:** N/A (no repository file changes)

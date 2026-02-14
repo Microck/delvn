@@ -83,9 +83,9 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Used project virtualenv for verification commands**
 - **Found during:** Task 1 and Task 3 verification
 - **Issue:** System `python3` in this workspace cannot import `src/` packages directly (`models`, `normalization`) without editable install context.
-- **Fix:** Executed verification commands with `/tmp/threat-fusion-venv/bin/python`, which has the project import path configured.
+- **Fix:** Executed verification commands with `/tmp/delvn-venv/bin/python`, which has the project import path configured.
 - **Files modified:** None (execution environment only)
-- **Verification:** `/tmp/threat-fusion-venv/bin/python -m pytest -q` passed (12 tests).
+- **Verification:** `/tmp/delvn-venv/bin/python -m pytest -q` passed (12 tests).
 - **Committed in:** N/A (environment/runtime adjustment)
 
 ---
@@ -94,7 +94,7 @@ Each task was committed atomically:
 **Impact on plan:** No scope change; deviation only affected command runtime environment.
 
 ## Issues Encountered
-- System interpreter package resolution differs from project virtualenv; using `/tmp/threat-fusion-venv/bin/python` unblocked verification without code changes.
+- System interpreter package resolution differs from project virtualenv; using `/tmp/delvn-venv/bin/python` unblocked verification without code changes.
 
 ## User Setup Required
 

@@ -79,9 +79,9 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Used project virtualenv for verification commands**
 - **Found during:** Task 1, Task 2, and Task 3 verification
 - **Issue:** Workspace `python3` cannot resolve project packages (`integrations`, `agents`, `normalization`) without the project environment.
-- **Fix:** Re-ran required verification commands using `/tmp/threat-fusion-venv/bin/python`.
+- **Fix:** Re-ran required verification commands using `/tmp/delvn-venv/bin/python`.
 - **Files modified:** None (execution environment only)
-- **Verification:** Import checks and `/tmp/threat-fusion-venv/bin/python -m pytest -q` passed (17 tests).
+- **Verification:** Import checks and `/tmp/delvn-venv/bin/python -m pytest -q` passed (17 tests).
 - **Committed in:** N/A (runtime verification adjustment)
 
 ---
@@ -90,7 +90,7 @@ Each task was committed atomically:
 **Impact on plan:** No scope change; deviation was only verification environment routing.
 
 ## Issues Encountered
-- System interpreter package resolution differs from the project venv; using `/tmp/threat-fusion-venv` unblocked plan verification.
+- System interpreter package resolution differs from the project venv; using `/tmp/delvn-venv` unblocked plan verification.
 
 ## User Setup Required
 

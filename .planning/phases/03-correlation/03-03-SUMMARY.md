@@ -78,7 +78,7 @@ None - plan executed exactly as written.
 
 ## Issues Encountered
 
-- System `python3` environment did not resolve project modules (`ModuleNotFoundError: storage`), so verification used `/tmp/threat-fusion-venv/bin/python` as instructed by execution context.
+- System `python3` environment did not resolve project modules (`ModuleNotFoundError: storage`), so verification used `/tmp/delvn-venv/bin/python` as instructed by execution context.
 
 ## Authentication Gates
 

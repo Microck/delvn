@@ -87,7 +87,7 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Used project venv + `PYTHONPATH=src` for verification commands**
 - **Found during:** Task 1 verification
 - **Issue:** Default `python3` environment could not resolve project modules (`ModuleNotFoundError: models`) when running plan verification commands.
-- **Fix:** Ran verification using `/tmp/threat-fusion-venv/bin/python3` with `PYTHONPATH=src` so imports resolve consistently.
+- **Fix:** Ran verification using `/tmp/delvn-venv/bin/python3` with `PYTHONPATH=src` so imports resolve consistently.
 - **Files modified:** None (execution environment only)
 - **Verification:** Task import checks passed and `python3 -m pytest -q` returned `35 passed`.
 - **Committed in:** N/A (no repository file changes)

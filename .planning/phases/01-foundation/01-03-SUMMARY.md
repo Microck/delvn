@@ -85,9 +85,9 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Used project virtualenv for verification commands**
 - **Found during:** Task 1/Task 3 verification
 - **Issue:** System `python3` in this workspace cannot import `src/` packages directly (`storage`, `models`) without editable install.
-- **Fix:** Ran verification commands using `/tmp/threat-fusion-venv/bin/python` where editable install is already configured.
+- **Fix:** Ran verification commands using `/tmp/delvn-venv/bin/python` where editable install is already configured.
 - **Files modified:** None (execution environment only)
-- **Verification:** `/tmp/threat-fusion-venv/bin/python -m pytest -q` passed (9 tests).
+- **Verification:** `/tmp/delvn-venv/bin/python -m pytest -q` passed (9 tests).
 - **Committed in:** N/A (environment/runtime adjustment)
 
 ---

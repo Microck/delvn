@@ -79,9 +79,9 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Switched verification commands to project virtualenv**
 - **Found during:** Task 1, Task 2, Task 3 verification
 - **Issue:** Workspace `python3` could not resolve `src/` packages (`integrations`, `agents`, `normalization`) during imports/tests.
-- **Fix:** Re-ran all verification commands with `/tmp/threat-fusion-venv/bin/python`.
+- **Fix:** Re-ran all verification commands with `/tmp/delvn-venv/bin/python`.
 - **Files modified:** None (execution environment only)
-- **Verification:** `/tmp/threat-fusion-venv/bin/python -m pytest -q` passed (20 tests).
+- **Verification:** `/tmp/delvn-venv/bin/python -m pytest -q` passed (20 tests).
 - **Committed in:** N/A (runtime-only adjustment)
 
 ---

@@ -79,9 +79,9 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Used project virtualenv for verification commands**
 - **Found during:** Task 1, Task 2, and Task 3 verification
 - **Issue:** System `python3` cannot resolve project packages (`integrations`, `agents`, `models`) in this workspace.
-- **Fix:** Ran plan verification via `/tmp/threat-fusion-venv/bin/python` where the package import path is configured.
+- **Fix:** Ran plan verification via `/tmp/delvn-venv/bin/python` where the package import path is configured.
 - **Files modified:** None (execution environment only)
-- **Verification:** `/tmp/threat-fusion-venv/bin/python -m pytest -q` passed (15 tests).
+- **Verification:** `/tmp/delvn-venv/bin/python -m pytest -q` passed (15 tests).
 - **Committed in:** N/A (environment/runtime adjustment)
 
 ---
@@ -90,7 +90,7 @@ Each task was committed atomically:
 **Impact on plan:** No scope change; deviation only affected command runtime selection.
 
 ## Issues Encountered
-- System interpreter import resolution differs from the project virtualenv; switched verification commands to `/tmp/threat-fusion-venv/bin/python`.
+- System interpreter import resolution differs from the project virtualenv; switched verification commands to `/tmp/delvn-venv/bin/python`.
 
 ## User Setup Required
 

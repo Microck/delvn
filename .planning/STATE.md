@@ -1,12 +1,12 @@
-# IntelMosaic - Project State
+# Delvn - Project State
 
 ## Current Position
 
 Phase: 5 of 5 (Demo & Submit)
-Plan: 3 of 3
-Status: Phase complete
-Last activity: 2026-02-14 - Completed 05-03-PLAN.md
-Progress: ████████████████ 100% (16/16 plans complete)
+Plan: 4 of 4 (gap closure)
+Status: Checkpoint pending (human-action)
+Last activity: 2026-02-14 - Completed 05-04 Task 1; awaiting demo video recording
+Progress: ███████████████░ 94% (16/17 plans complete, 1 pending)
 
 ## Phase Status
 
@@ -16,7 +16,7 @@ Progress: ████████████████ 100% (16/16 plans com
 | 2 | Collection Agents | Complete | 4/4 plans complete |
 | 3 | Correlation | Complete | 3/3 plans complete |
 | 4 | Prioritization & Reporting | Complete | 3/3 plans complete |
-| 5 | Demo & Submit | Complete | 3/3 plans complete |
+| 5 | Demo & Submit | In Progress | 3/4 plans complete (05-04 pending checkpoint) |
 
 ## Decisions
 
@@ -24,7 +24,7 @@ Progress: ████████████████ 100% (16/16 plans com
 |-------|----------|-----------|
 | 01-01 | Use uppercase `Settings` fields mirroring env variable names | Keeps config contract explicit for later plans and runtime operators |
 | 01-01 | Keep shared HTTP API minimal (`build_client`, `get_json`) | Avoids premature abstraction while centralizing defaults/retries |
-| 01-01 | Verify with `/tmp/threat-fusion-venv` instead of system pip | Unblocks execution in a PEP 668 managed Python environment |
+| 01-01 | Verify with `/tmp/delvn-venv` instead of system pip | Unblocks execution in a PEP 668 managed Python environment |
 | 01-02 | Require `id/source/type/title/raw` in `ThreatBase` and keep enrichment fields optional | Enforces ingestion identity invariants without making collectors brittle |
 | 01-02 | Constrain subtype `type` values with `Literal` and normalize `indicator_type` enum | Prevents cross-type payload drift before correlation and storage |
 | 01-03 | Use `/source` as threats partition key and `/id` for correlations bootstrap | Simplifies threat writes while ensuring both containers are provisioned for downstream plans |
@@ -56,15 +56,17 @@ Progress: ████████████████ 100% (16/16 plans com
 | 05-02 | Document architecture with agent-role mapping and fallback matrix | Makes enterprise value and resiliency story explicit for reviewers |
 | 05-03 | Keep demo recording manual but enforce a timecoded checklist workflow | Ensures a fast, repeatable 2-minute capture without blocking execution on recording itself |
 | 05-03 | Require README/example brief/`--dry-run` consistency checks before packaging | Prevents submission drift between documented commands and shipped artifacts |
+| 05-04 | Force recording checklist live command to include `--live --config demo/config.yaml` and add explicit video verification gate | Closes DEMO-02 wiring gap before final artifact recording |
 
 ## Blockers/Concerns Carried Forward
 
-- None.
+- 05-04 Task 2 (checkpoint:human-action) is blocked pending manual live recording and commit of `demo/video.mp4`.
 
 ## Recent Activity
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | 05-04 checkpoint reached: Task 1 complete (live command + video gate), Task 2 pending manual recording of `demo/video.mp4` |
 | 2026-02-14 | Completed 05-03 recording and submission consistency checklists |
 | 2026-02-14 | Completed 05-02 judge-facing README + architecture reference docs |
 | 2026-02-14 | Completed 05-01 demo config + safe runner + sample brief + dry-run verification |
@@ -85,7 +87,7 @@ Progress: ████████████████ 100% (16/16 plans com
 ## Session Continuity
 
 - Last session: 2026-02-14T19:45:12Z
-- Stopped at: Completed 05-03-PLAN.md
-- Resume from: None
+- Stopped at: 05-04 Task 2 checkpoint (human-action)
+- Resume from: Record/add `demo/video.mp4`, then continue 05-04 completion + phase re-verification
 
 *Last updated: 2026-02-14*

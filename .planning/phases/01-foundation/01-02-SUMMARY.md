@@ -80,9 +80,9 @@ Each task was committed atomically:
 **1. [Rule 3 - Blocking] Used shared virtualenv for verification commands**
 - **Found during:** Task 1 (Implement core threat models)
 - **Issue:** System `python3` could not import project modules without editable install (`ModuleNotFoundError: models`), blocking plan verification commands.
-- **Fix:** Reused `/tmp/threat-fusion-venv`, ran editable install, and executed verification/tests with that interpreter.
+- **Fix:** Reused `/tmp/delvn-venv`, ran editable install, and executed verification/tests with that interpreter.
 - **Files modified:** None (execution environment only)
-- **Verification:** `/tmp/threat-fusion-venv/bin/python -c "from models.threat import CVEThreat; CVEThreat.model_json_schema()"` and `/tmp/threat-fusion-venv/bin/python -m pytest -q` both passed.
+- **Verification:** `/tmp/delvn-venv/bin/python -c "from models.threat import CVEThreat; CVEThreat.model_json_schema()"` and `/tmp/delvn-venv/bin/python -m pytest -q` both passed.
 - **Committed in:** N/A (environment/runtime adjustment)
 
 ---
