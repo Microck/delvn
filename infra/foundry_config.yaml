@@ -1,0 +1,4 @@
+resource_group_name: "<resource-group-name>"
+cosmos_account_name: "<cosmos-account-name>"
+search_service_name: "<search-service-name>"
+deployment_region: "<deployment-region>"
