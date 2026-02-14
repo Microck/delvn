@@ -2,11 +2,11 @@
 
 ## Current Position
 
-Phase: 2 of 5 (Collection Agents)
-Plan: 4 of 4
-Status: Phase complete
-Last activity: 2026-02-14 - Completed 02-03-PLAN.md
-Progress: ███████░░░░░░░░░ 44% (7/16 plans complete)
+Phase: 3 of 5 (Correlation)
+Plan: 1 of 3
+Status: In progress
+Last activity: 2026-02-14 - Completed 03-01-PLAN.md
+Progress: ████████░░░░░░░░ 50% (8/16 plans complete)
 
 ## Phase Status
 
@@ -14,7 +14,7 @@ Progress: ███████░░░░░░░░░ 44% (7/16 plans compl
 |-------|------|--------|----------|
 | 1 | Foundation | Complete | 3/3 plans complete |
 | 2 | Collection Agents | Complete | 4/4 plans complete |
-| 3 | Correlation | Not Started | 0/3 plans complete |
+| 3 | Correlation | In Progress | 1/3 plans complete |
 | 4 | Prioritization & Reporting | Not Started | 0/3 plans complete |
 | 5 | Demo & Submit | Not Started | 0/3 plans complete |
 
@@ -38,6 +38,8 @@ Progress: ███████░░░░░░░░░ 44% (7/16 plans compl
 | 02-03 | Keep Intel collection batch resilient with per-item error accounting | Allows partial progress during normalization/storage failures without aborting full runs |
 | 02-04 | Keep a short built-in security feed list with `RSS_FEED_URLS` override | Allows source updates without code changes while preserving sane defaults |
 | 02-04 | Derive RSS source labels from feed hostnames before normalization | Retains feed provenance in stored IDs while reusing unified RSS mapping |
+| 03-01 | Default embeddings to deterministic hash fallback and only use Azure OpenAI when all embedding env vars are present | Keeps correlation development unblocked without cloud credentials while enabling live embeddings when configured |
+| 03-01 | Return minimal vector hits (`id`, `source`, `type`, `score`) from SearchStore | Gives correlator a stable similarity contract without leaking storage-specific payload noise |
 
 ## Blockers/Concerns Carried Forward
 
@@ -47,6 +49,7 @@ Progress: ███████░░░░░░░░░ 44% (7/16 plans compl
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | Completed 03-01 embedding client abstraction + vector search indexing + embedding smoke tests |
 | 2026-02-14 | Completed 02-03 OTX integration + Intel agent pipeline + normalization tests |
 | 2026-02-14 | Completed 02-04 RSS integration + News agent pipeline + normalization tests |
 | 2026-02-14 | Completed 02-02 NVD integration + CVE agent pipeline + parsing tests |
@@ -57,8 +60,8 @@ Progress: ███████░░░░░░░░░ 44% (7/16 plans compl
 
 ## Session Continuity
 
-- Last session: 2026-02-14T07:00:22Z
-- Stopped at: Completed 02-03-PLAN.md
-- Resume from: `.planning/phases/03-correlation/03-01-PLAN.md`
+- Last session: 2026-02-14T07:13:53Z
+- Stopped at: Completed 03-01-PLAN.md
+- Resume from: `.planning/phases/03-correlation/03-02-PLAN.md`
 
 *Last updated: 2026-02-14*
