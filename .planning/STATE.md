@@ -3,17 +3,17 @@
 ## Current Position
 
 Phase: 2 of 5 (Collection Agents)
-Plan: 1 of 4
+Plan: 2 of 4
 Status: In progress
-Last activity: 2026-02-14 - Completed 02-01-PLAN.md
-Progress: ████░░░░░░░░░░░░ 25% (4/16 plans complete)
+Last activity: 2026-02-14 - Completed 02-02-PLAN.md
+Progress: █████░░░░░░░░░░░ 31% (5/16 plans complete)
 
 ## Phase Status
 
 | Phase | Name | Status | Progress |
 |-------|------|--------|----------|
 | 1 | Foundation | Complete | 3/3 plans complete |
-| 2 | Collection Agents | In Progress | 1/4 plans complete |
+| 2 | Collection Agents | In Progress | 2/4 plans complete |
 | 3 | Correlation | Not Started | 0/3 plans complete |
 | 4 | Prioritization & Reporting | Not Started | 0/3 plans complete |
 | 5 | Demo & Submit | Not Started | 0/3 plans complete |
@@ -32,6 +32,8 @@ Progress: ████░░░░░░░░░░░░ 25% (4/16 plans compl
 | 01-03 | Make smoke runner skip-safe and env-gated | Allows local no-credential verification while enabling live cloud checks when configured |
 | 02-01 | Introduce `UnifiedThreat` + `ThreatIndicator` as the single collector output schema | Ensures downstream correlation/prioritization can operate without source-specific branching |
 | 02-01 | Use source-prefixed normalized IDs and pure normalization functions | Preserves source provenance and keeps normalization deterministic/testable |
+| 02-02 | Keep NVD integration output minimal (`cve`, `published`, `lastModified`) | Reuses existing `normalize_nvd_cve` contract and avoids duplicating mapping logic |
+| 02-02 | Return batch stats with per-record error accounting in CVE agent | Preserves ingestion progress while exposing normalization/storage failures |
 
 ## Blockers/Concerns Carried Forward
 
@@ -41,6 +43,7 @@ Progress: ████░░░░░░░░░░░░ 25% (4/16 plans compl
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | Completed 02-02 NVD integration + CVE agent pipeline + parsing tests |
 | 2026-02-14 | Completed 02-01 unified threat model + normalization layer + tests |
 | 2026-02-14 | Completed 01-03 storage adapters + Azure smoke tooling |
 | 2026-02-14 | Completed 01-02 threat data model and invariant tests |
@@ -48,8 +51,8 @@ Progress: ████░░░░░░░░░░░░ 25% (4/16 plans compl
 
 ## Session Continuity
 
-- Last session: 2026-02-14T06:51:30Z
-- Stopped at: Completed 02-01-PLAN.md
-- Resume from: `.planning/phases/02-collection-agents/02-02-PLAN.md`
+- Last session: 2026-02-14T06:58:09Z
+- Stopped at: Completed 02-02-PLAN.md
+- Resume from: `.planning/phases/02-collection-agents/02-03-PLAN.md`
 
 *Last updated: 2026-02-14*
