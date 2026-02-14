@@ -3,16 +3,16 @@
 ## Current Position
 
 Phase: 1 of 5 (Foundation)
-Plan: 1 of 3
+Plan: 2 of 3
 Status: In progress
-Last activity: 2026-02-14 - Completed 01-01-PLAN.md
-Progress: █░░░░░░░░░░░░░░░ 6% (1/16 plans complete)
+Last activity: 2026-02-14 - Completed 01-02-PLAN.md
+Progress: ██░░░░░░░░░░░░░░░ 12% (2/16 plans complete)
 
 ## Phase Status
 
 | Phase | Name | Status | Progress |
 |-------|------|--------|----------|
-| 1 | Foundation | In progress | 1/3 plans complete |
+| 1 | Foundation | In progress | 2/3 plans complete |
 | 2 | Collection Agents | Not Started | 0/4 plans complete |
 | 3 | Correlation | Not Started | 0/3 plans complete |
 | 4 | Prioritization & Reporting | Not Started | 0/3 plans complete |
@@ -25,6 +25,8 @@ Progress: █░░░░░░░░░░░░░░░ 6% (1/16 plans comple
 | 01-01 | Use uppercase `Settings` fields mirroring env variable names | Keeps config contract explicit for later plans and runtime operators |
 | 01-01 | Keep shared HTTP API minimal (`build_client`, `get_json`) | Avoids premature abstraction while centralizing defaults/retries |
 | 01-01 | Verify with `/tmp/threat-fusion-venv` instead of system pip | Unblocks execution in a PEP 668 managed Python environment |
+| 01-02 | Require `id/source/type/title/raw` in `ThreatBase` and keep enrichment fields optional | Enforces ingestion identity invariants without making collectors brittle |
+| 01-02 | Constrain subtype `type` values with `Literal` and normalize `indicator_type` enum | Prevents cross-type payload drift before correlation and storage |
 
 ## Blockers/Concerns Carried Forward
 
@@ -34,13 +36,14 @@ Progress: █░░░░░░░░░░░░░░░ 6% (1/16 plans comple
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | Completed 01-02 threat data model and invariant tests |
 | 2026-02-14 | Completed 01-01 foundation scaffold (settings + HTTP helpers + smoke test) |
 | 2026-02-08 | Project initialized, requirements defined, roadmap created |
 
 ## Session Continuity
 
-- Last session: 2026-02-14T06:14:02Z
-- Stopped at: Completed 01-01-PLAN.md
-- Resume from: `.planning/phases/01-foundation/01-02-PLAN.md`
+- Last session: 2026-02-14T06:32:27Z
+- Stopped at: Completed 01-02-PLAN.md
+- Resume from: `.planning/phases/01-foundation/01-03-PLAN.md`
 
 *Last updated: 2026-02-14*
