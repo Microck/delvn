@@ -3,10 +3,10 @@
 ## Current Position
 
 Phase: 3 of 5 (Correlation)
-Plan: 1 of 3
+Plan: 2 of 3
 Status: In progress
-Last activity: 2026-02-14 - Completed 03-01-PLAN.md
-Progress: ████████░░░░░░░░ 50% (8/16 plans complete)
+Last activity: 2026-02-14 - Completed 03-02-PLAN.md
+Progress: █████████░░░░░░░ 56% (9/16 plans complete)
 
 ## Phase Status
 
@@ -14,7 +14,7 @@ Progress: ████████░░░░░░░░ 50% (8/16 plans compl
 |-------|------|--------|----------|
 | 1 | Foundation | Complete | 3/3 plans complete |
 | 2 | Collection Agents | Complete | 4/4 plans complete |
-| 3 | Correlation | In Progress | 1/3 plans complete |
+| 3 | Correlation | In Progress | 2/3 plans complete |
 | 4 | Prioritization & Reporting | Not Started | 0/3 plans complete |
 | 5 | Demo & Submit | Not Started | 0/3 plans complete |
 
@@ -40,6 +40,8 @@ Progress: ████████░░░░░░░░ 50% (8/16 plans compl
 | 02-04 | Derive RSS source labels from feed hostnames before normalization | Retains feed provenance in stored IDs while reusing unified RSS mapping |
 | 03-01 | Default embeddings to deterministic hash fallback and only use Azure OpenAI when all embedding env vars are present | Keeps correlation development unblocked without cloud credentials while enabling live embeddings when configured |
 | 03-01 | Return minimal vector hits (`id`, `source`, `type`, `score`) from SearchStore | Gives correlator a stable similarity contract without leaking storage-specific payload noise |
+| 03-02 | Weight confidence primarily by vector similarity with capped shared-term boosts and same-source penalty | Preserves monotonic, explainable scoring while reducing self-correlation dominance |
+| 03-02 | Build matcher overlap from token, CVE, and IOC extraction over available hit text fields | Produces concrete link reasons even when vector results contain sparse metadata |
 
 ## Blockers/Concerns Carried Forward
 
@@ -49,6 +51,7 @@ Progress: ████████░░░░░░░░ 50% (8/16 plans compl
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | Completed 03-02 correlation link model + scoring + matcher + scoring tests |
 | 2026-02-14 | Completed 03-01 embedding client abstraction + vector search indexing + embedding smoke tests |
 | 2026-02-14 | Completed 02-03 OTX integration + Intel agent pipeline + normalization tests |
 | 2026-02-14 | Completed 02-04 RSS integration + News agent pipeline + normalization tests |
@@ -60,8 +63,8 @@ Progress: ████████░░░░░░░░ 50% (8/16 plans compl
 
 ## Session Continuity
 
-- Last session: 2026-02-14T07:13:53Z
-- Stopped at: Completed 03-01-PLAN.md
-- Resume from: `.planning/phases/03-correlation/03-02-PLAN.md`
+- Last session: 2026-02-14T07:22:17Z
+- Stopped at: Completed 03-02-PLAN.md
+- Resume from: `.planning/phases/03-correlation/03-03-PLAN.md`
 
 *Last updated: 2026-02-14*
