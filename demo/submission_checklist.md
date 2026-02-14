@@ -44,7 +44,20 @@ python3 demo/run_demo.py --help | rg -- "--dry-run|--live"
 python3 demo/run_demo.py --dry-run
 ```
 
-## 4) Submission packaging checklist
+## 4) Final demo video verification gate (DEMO-02)
+
+- [ ] Confirm final artifact exists at `demo/video.mp4`.
+- [ ] Confirm video duration is in the target 1:50-2:10 window.
+- [ ] Confirm playback sanity: clear narration, no visible secrets, and full flow (config -> run -> brief evidence) is captured.
+
+Suggested local checks:
+
+```bash
+test -f demo/video.mp4
+ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 demo/video.mp4
+```
+
+## 5) Submission packaging checklist
 
 - [ ] Include `README.md`.
 - [ ] Include `docs/architecture.md`.
@@ -52,11 +65,11 @@ python3 demo/run_demo.py --dry-run
 - [ ] Include `demo/config.yaml`.
 - [ ] Include `demo/run_demo.py`.
 - [ ] Include `demo/recording_checklist.md`.
-- [ ] Include recorded video at `demo/video.mp4` after manual capture.
+- [ ] Include verified recorded video at `demo/video.mp4`.
 - [ ] Confirm all links and paths in submission text resolve correctly.
 - [ ] Confirm no secrets, keys, or sensitive logs are packaged.
 
-## 5) Final handoff sanity
+## 6) Final handoff sanity
 
 - [ ] Repo state is consistent with what judges will run.
 - [ ] Commands are copy-pasteable on a clean environment.

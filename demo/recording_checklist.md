@@ -11,7 +11,7 @@ Use this checklist to record a polished 2-minute end-to-end demo quickly and con
 - [ ] Keep one editor tab ready for `docs/example_brief.md`.
 - [ ] Decide run mode:
   - Safe mode for judging: `python3 demo/run_demo.py --dry-run`
-  - Live mode (only if env is configured): `python3 demo/run_demo.py`
+  - Live mode (only if env is configured): `python3 demo/run_demo.py --live --config demo/config.yaml`
 
 ## 2) On-screen flow (target: ~2:00)
 
@@ -28,7 +28,7 @@ Use this checklist to record a polished 2-minute end-to-end demo quickly and con
 
 ### 0:55-1:25 Live execution (optional)
 
-- [ ] If environment is ready, run: `python3 demo/run_demo.py`.
+- [ ] If environment is ready, run: `python3 demo/run_demo.py --live --config demo/config.yaml`.
 - [ ] If not configured, explicitly state that dry-run is the default fallback.
 
 ### 1:25-1:50 Output walkthrough
