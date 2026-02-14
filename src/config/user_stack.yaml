@@ -1,0 +1,12 @@
+products:
+  - Apache HTTP Server
+  - PostgreSQL
+  - React
+platforms:
+  - linux
+exclude:
+  - windows
+keywords:
+  - httpd
+  - postgres
+  - frontend
