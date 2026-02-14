@@ -1,0 +1,26 @@
+stack:
+  products:
+    - Apache HTTP Server
+    - PostgreSQL
+    - React
+  platforms:
+    - Linux
+  keywords:
+    - httpd
+    - postgres
+    - frontend
+  exclude:
+    - Windows
+
+run:
+  collection_window_days: 7
+  max_items_per_source: 25
+  cve_results_per_page: 25
+  intel_limit: 25
+  correlation_limit: 120
+  correlation_top_k: 8
+  correlation_min_confidence: 0.35
+  prioritization_limit: 120
+  report_top_risks: 5
+  report_notable_mentions: 3
+  report_output_path: docs/demo_brief.md
