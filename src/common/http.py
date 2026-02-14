@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from typing import Any
 
 import httpx
@@ -7,6 +8,8 @@ from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponen
 
 
 _RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+DEFAULT_TIMEOUT_SECONDS = 10.0
+DEFAULT_USER_AGENT = "threat-fusion/0.1.0"
 
 
 def _should_retry(exc: BaseException) -> bool:
@@ -16,15 +19,21 @@ def _should_retry(exc: BaseException) -> bool:
 
 
 def build_client(
-    *, headers: dict[str, str] | None = None, timeout_s: float = 10.0
+    *,
+    headers: Mapping[str, str] | None = None,
+    timeout_s: float = DEFAULT_TIMEOUT_SECONDS,
 ) -> httpx.Client:
     base_headers = {
-        "User-Agent": "threat-fusion/0.1.0",
+        "User-Agent": DEFAULT_USER_AGENT,
         "Accept": "application/json",
     }
     if headers:
         base_headers.update(headers)
-    return httpx.Client(timeout=httpx.Timeout(timeout_s), headers=base_headers)
+    return httpx.Client(
+        timeout=httpx.Timeout(timeout_s),
+        headers=base_headers,
+        follow_redirects=True,
+    )
 
 
 @retry(
@@ -36,13 +45,10 @@ def build_client(
 def get_json(
     url: str,
     *,
-    headers: dict[str, str] | None = None,
-    params: dict[str, Any] | None = None,
+    headers: Mapping[str, str] | None = None,
+    params: Mapping[str, Any] | None = None,
 ) -> Any:
     with build_client(headers=headers) as client:
-        resp = client.get(url, params=params)
-        if resp.status_code >= 400:
-            raise httpx.HTTPStatusError(
-                "request failed", request=resp.request, response=resp
-            )
-        return resp.json()
+        response = client.get(url, params=params)
+        response.raise_for_status()
+        return response.json()

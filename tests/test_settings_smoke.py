@@ -1,5 +1,10 @@
 def test_settings_and_helpers_import() -> None:
-    from config.settings import Settings  # noqa: F401
-    from common.http import get_json  # noqa: F401
+    from common.http import build_client, get_json
+    from config.settings import Settings
 
-    assert True
+    settings = Settings()
+    assert settings.APP_ENV == "dev"
+    assert callable(get_json)
+
+    with build_client() as client:
+        assert client is not None
