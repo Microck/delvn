@@ -2,11 +2,11 @@
 
 ## Current Position
 
-Phase: 4 of 5 (Prioritization & Reporting)
-Plan: 3 of 3
-Status: Phase complete
-Last activity: 2026-02-14 - Completed 04-03-PLAN.md
-Progress: █████████████░░░ 81% (13/16 plans complete)
+Phase: 5 of 5 (Demo & Submit)
+Plan: 1 of 3
+Status: In progress
+Last activity: 2026-02-14 - Completed 05-01-PLAN.md
+Progress: ██████████████░░ 88% (14/16 plans complete)
 
 ## Phase Status
 
@@ -16,7 +16,7 @@ Progress: █████████████░░░ 81% (13/16 plans comp
 | 2 | Collection Agents | Complete | 4/4 plans complete |
 | 3 | Correlation | Complete | 3/3 plans complete |
 | 4 | Prioritization & Reporting | Complete | 3/3 plans complete |
-| 5 | Demo & Submit | Not Started | 0/3 plans complete |
+| 5 | Demo & Submit | In progress | 1/3 plans complete |
 
 ## Decisions
 
@@ -50,6 +50,8 @@ Progress: █████████████░░░ 81% (13/16 plans comp
 | 04-02 | Return prioritizer output as structured ranked data (not report prose) | Preserves separation between prioritization logic and reporting generation in next plan |
 | 04-03 | Keep `run_reporting()` deterministic and accept optional precomputed prioritization output | Supports reproducible demos/tests without requiring live Cosmos dependencies |
 | 04-03 | Split reporting into model, renderer, and agent orchestration layers | Keeps formatting logic reusable and isolates orchestration from presentation concerns |
+| 05-01 | Require explicit `--live` plus Azure env checks before running collectors/stores | Prevents destructive demo runs and avoids accidental external calls in judging environments |
+| 05-01 | Default demo execution path to dry-run behavior | Keeps demo rehearsals repeatable and safe when credentials are unavailable |
 
 ## Blockers/Concerns Carried Forward
 
@@ -59,6 +61,7 @@ Progress: █████████████░░░ 81% (13/16 plans comp
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | Completed 05-01 demo config + safe runner + sample brief + dry-run verification |
 | 2026-02-14 | Completed 04-03 reporter agent + markdown renderer + brief rendering tests |
 | 2026-02-14 | Completed 04-02 prioritizer agent orchestration + stack relevance scoring + prioritization tests |
 | 2026-02-14 | Completed 04-01 user stack YAML config + typed loader + normalization tests |
@@ -75,8 +78,8 @@ Progress: █████████████░░░ 81% (13/16 plans comp
 
 ## Session Continuity
 
-- Last session: 2026-02-14T18:45:07Z
-- Stopped at: Completed 04-03-PLAN.md
-- Resume from: `.planning/phases/05-demo-submit/05-01-PLAN.md`
+- Last session: 2026-02-14T19:33:10Z
+- Stopped at: Completed 05-01-PLAN.md
+- Resume from: `.planning/phases/05-demo-submit/05-02-PLAN.md`
 
 *Last updated: 2026-02-14*
