@@ -3,10 +3,10 @@
 ## Current Position
 
 Phase: 5 of 5 (Demo & Submit)
-Plan: 2 of 3
-Status: In progress
-Last activity: 2026-02-14 - Completed 05-02-PLAN.md
-Progress: ███████████████░ 94% (15/16 plans complete)
+Plan: 3 of 3
+Status: Phase complete
+Last activity: 2026-02-14 - Completed 05-03-PLAN.md
+Progress: ████████████████ 100% (16/16 plans complete)
 
 ## Phase Status
 
@@ -16,7 +16,7 @@ Progress: ███████████████░ 94% (15/16 plans comp
 | 2 | Collection Agents | Complete | 4/4 plans complete |
 | 3 | Correlation | Complete | 3/3 plans complete |
 | 4 | Prioritization & Reporting | Complete | 3/3 plans complete |
-| 5 | Demo & Submit | In progress | 2/3 plans complete |
+| 5 | Demo & Submit | Complete | 3/3 plans complete |
 
 ## Decisions
 
@@ -54,6 +54,8 @@ Progress: ███████████████░ 94% (15/16 plans comp
 | 05-01 | Default demo execution path to dry-run behavior | Keeps demo rehearsals repeatable and safe when credentials are unavailable |
 | 05-02 | Lead README setup with dry-run first and explicit live step | Minimizes judge friction while preserving safe, repeatable execution by default |
 | 05-02 | Document architecture with agent-role mapping and fallback matrix | Makes enterprise value and resiliency story explicit for reviewers |
+| 05-03 | Keep demo recording manual but enforce a timecoded checklist workflow | Ensures a fast, repeatable 2-minute capture without blocking execution on recording itself |
+| 05-03 | Require README/example brief/`--dry-run` consistency checks before packaging | Prevents submission drift between documented commands and shipped artifacts |
 
 ## Blockers/Concerns Carried Forward
 
@@ -63,6 +65,7 @@ Progress: ███████████████░ 94% (15/16 plans comp
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | Completed 05-03 recording and submission consistency checklists |
 | 2026-02-14 | Completed 05-02 judge-facing README + architecture reference docs |
 | 2026-02-14 | Completed 05-01 demo config + safe runner + sample brief + dry-run verification |
 | 2026-02-14 | Completed 04-03 reporter agent + markdown renderer + brief rendering tests |
@@ -81,8 +84,8 @@ Progress: ███████████████░ 94% (15/16 plans comp
 
 ## Session Continuity
 
-- Last session: 2026-02-14T19:40:41Z
-- Stopped at: Completed 05-02-PLAN.md
-- Resume from: `.planning/phases/05-demo-submit/05-03-PLAN.md`
+- Last session: 2026-02-14T19:45:12Z
+- Stopped at: Completed 05-03-PLAN.md
+- Resume from: None
 
 *Last updated: 2026-02-14*
