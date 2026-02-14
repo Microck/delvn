@@ -3,17 +3,17 @@
 ## Current Position
 
 Phase: 2 of 5 (Collection Agents)
-Plan: 2 of 4
+Plan: 3 of 4
 Status: In progress
-Last activity: 2026-02-14 - Completed 02-02-PLAN.md
-Progress: █████░░░░░░░░░░░ 31% (5/16 plans complete)
+Last activity: 2026-02-14 - Completed 02-04-PLAN.md
+Progress: ██████░░░░░░░░░░ 38% (6/16 plans complete)
 
 ## Phase Status
 
 | Phase | Name | Status | Progress |
 |-------|------|--------|----------|
 | 1 | Foundation | Complete | 3/3 plans complete |
-| 2 | Collection Agents | In Progress | 2/4 plans complete |
+| 2 | Collection Agents | In Progress | 3/4 plans complete |
 | 3 | Correlation | Not Started | 0/3 plans complete |
 | 4 | Prioritization & Reporting | Not Started | 0/3 plans complete |
 | 5 | Demo & Submit | Not Started | 0/3 plans complete |
@@ -34,6 +34,8 @@ Progress: █████░░░░░░░░░░░ 31% (5/16 plans compl
 | 02-01 | Use source-prefixed normalized IDs and pure normalization functions | Preserves source provenance and keeps normalization deterministic/testable |
 | 02-02 | Keep NVD integration output minimal (`cve`, `published`, `lastModified`) | Reuses existing `normalize_nvd_cve` contract and avoids duplicating mapping logic |
 | 02-02 | Return batch stats with per-record error accounting in CVE agent | Preserves ingestion progress while exposing normalization/storage failures |
+| 02-04 | Keep a short built-in security feed list with `RSS_FEED_URLS` override | Allows source updates without code changes while preserving sane defaults |
+| 02-04 | Derive RSS source labels from feed hostnames before normalization | Retains feed provenance in stored IDs while reusing unified RSS mapping |
 
 ## Blockers/Concerns Carried Forward
 
@@ -43,6 +45,7 @@ Progress: █████░░░░░░░░░░░ 31% (5/16 plans compl
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | Completed 02-04 RSS integration + News agent pipeline + normalization tests |
 | 2026-02-14 | Completed 02-02 NVD integration + CVE agent pipeline + parsing tests |
 | 2026-02-14 | Completed 02-01 unified threat model + normalization layer + tests |
 | 2026-02-14 | Completed 01-03 storage adapters + Azure smoke tooling |
@@ -51,8 +54,8 @@ Progress: █████░░░░░░░░░░░ 31% (5/16 plans compl
 
 ## Session Continuity
 
-- Last session: 2026-02-14T06:58:09Z
-- Stopped at: Completed 02-02-PLAN.md
+- Last session: 2026-02-14T06:58:53Z
+- Stopped at: Completed 02-04-PLAN.md
 - Resume from: `.planning/phases/02-collection-agents/02-03-PLAN.md`
 
 *Last updated: 2026-02-14*
