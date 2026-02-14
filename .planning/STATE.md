@@ -3,10 +3,10 @@
 ## Current Position
 
 Phase: 5 of 5 (Demo & Submit)
-Plan: 1 of 3
+Plan: 2 of 3
 Status: In progress
-Last activity: 2026-02-14 - Completed 05-01-PLAN.md
-Progress: ██████████████░░ 88% (14/16 plans complete)
+Last activity: 2026-02-14 - Completed 05-02-PLAN.md
+Progress: ███████████████░ 94% (15/16 plans complete)
 
 ## Phase Status
 
@@ -16,7 +16,7 @@ Progress: ██████████████░░ 88% (14/16 plans comp
 | 2 | Collection Agents | Complete | 4/4 plans complete |
 | 3 | Correlation | Complete | 3/3 plans complete |
 | 4 | Prioritization & Reporting | Complete | 3/3 plans complete |
-| 5 | Demo & Submit | In progress | 1/3 plans complete |
+| 5 | Demo & Submit | In progress | 2/3 plans complete |
 
 ## Decisions
 
@@ -52,6 +52,8 @@ Progress: ██████████████░░ 88% (14/16 plans comp
 | 04-03 | Split reporting into model, renderer, and agent orchestration layers | Keeps formatting logic reusable and isolates orchestration from presentation concerns |
 | 05-01 | Require explicit `--live` plus Azure env checks before running collectors/stores | Prevents destructive demo runs and avoids accidental external calls in judging environments |
 | 05-01 | Default demo execution path to dry-run behavior | Keeps demo rehearsals repeatable and safe when credentials are unavailable |
+| 05-02 | Lead README setup with dry-run first and explicit live step | Minimizes judge friction while preserving safe, repeatable execution by default |
+| 05-02 | Document architecture with agent-role mapping and fallback matrix | Makes enterprise value and resiliency story explicit for reviewers |
 
 ## Blockers/Concerns Carried Forward
 
@@ -61,6 +63,7 @@ Progress: ██████████████░░ 88% (14/16 plans comp
 
 | Date | Activity |
 |------|----------|
+| 2026-02-14 | Completed 05-02 judge-facing README + architecture reference docs |
 | 2026-02-14 | Completed 05-01 demo config + safe runner + sample brief + dry-run verification |
 | 2026-02-14 | Completed 04-03 reporter agent + markdown renderer + brief rendering tests |
 | 2026-02-14 | Completed 04-02 prioritizer agent orchestration + stack relevance scoring + prioritization tests |
@@ -78,8 +81,8 @@ Progress: ██████████████░░ 88% (14/16 plans comp
 
 ## Session Continuity
 
-- Last session: 2026-02-14T19:33:10Z
-- Stopped at: Completed 05-01-PLAN.md
-- Resume from: `.planning/phases/05-demo-submit/05-02-PLAN.md`
+- Last session: 2026-02-14T19:40:41Z
+- Stopped at: Completed 05-02-PLAN.md
+- Resume from: `.planning/phases/05-demo-submit/05-03-PLAN.md`
 
 *Last updated: 2026-02-14*
