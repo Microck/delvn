@@ -44,7 +44,7 @@ For deeper component details, see `docs/architecture.md`.
 ## Prerequisites
 
 - Python 3.11+
-- A virtual environment tool (`venv` is used below)
+- `uv` (for reproducible installs via `uv.lock`)
 - Azure resources for live mode:
   - Azure Cosmos DB endpoint + key
   - Azure AI Search endpoint + key
@@ -70,13 +70,10 @@ If Azure OpenAI embedding variables are not set, the correlator uses a determini
 
 ## Quickstart
 
-1. Create and activate a virtual environment.
+1. Install dependencies (creates `.venv`).
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e .
+uv sync --frozen
 ```
 
 2. Create or update `.env` with your live credentials.
@@ -95,13 +92,19 @@ OTX_API_KEY=<optional>
 3. Validate pipeline orchestration safely (no external calls, no Azure writes).
 
 ```bash
-python demo/run_demo.py --dry-run
+uv run python demo/run_demo.py --dry-run
 ```
 
 4. Run the live pipeline (collect -> correlate -> prioritize -> report).
 
 ```bash
-python demo/run_demo.py --live --config demo/config.yaml
+uv run python demo/run_demo.py --live --config demo/config.yaml
+```
+
+5. Run the test suite.
+
+```bash
+uv run pytest
 ```
 
 ## Data Sources And Scope Notes
