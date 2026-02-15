@@ -18,7 +18,13 @@ dependencies = [
   "azure-cosmos",
   "azure-search-documents",
   "azure-identity",
+]
+
+[dependency-groups]
+dev = [
   "pytest",
+  "ruff",
+  "mypy",
 ]
 
 [tool.setuptools]
