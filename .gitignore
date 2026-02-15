@@ -47,3 +47,8 @@ artifacts/
 recordings/
 test-results/
 playwright-report/
+
+# Local runtime logs / scratch
+mcp-server.log
+mcp-server-error.log
+session-*.md

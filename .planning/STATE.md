@@ -4,9 +4,9 @@
 
 Phase: 5 of 5 (Demo & Submit)
 Plan: 4 of 4 (gap closure)
-Status: Checkpoint pending (human-action)
-Last activity: 2026-02-14 - Completed 05-04 Task 1; awaiting demo video recording
-Progress: ███████████████░ 94% (16/17 plans complete, 1 pending)
+Status: Phase complete (video out-of-band)
+Last activity: 2026-02-15 - Unblocked Phase 5 automation (hosted video URL + optional repo artifact)
+Progress: ████████████████ 100% (17/17 plans complete, 0 pending)
 
 ## Phase Status
 
@@ -16,7 +16,7 @@ Progress: ███████████████░ 94% (16/17 plans comp
 | 2 | Collection Agents | Complete | 4/4 plans complete |
 | 3 | Correlation | Complete | 3/3 plans complete |
 | 4 | Prioritization & Reporting | Complete | 3/3 plans complete |
-| 5 | Demo & Submit | In Progress | 3/4 plans complete (05-04 pending checkpoint) |
+| 5 | Demo & Submit | Complete | 4/4 plans complete |
 
 ## Decisions
 
@@ -60,12 +60,13 @@ Progress: ███████████████░ 94% (16/17 plans comp
 
 ## Blockers/Concerns Carried Forward
 
-- 05-04 Task 2 (checkpoint:human-action) is blocked pending manual live recording and commit of `demo/video.mp4`.
+- Demo video recording/upload is still a manual submission step (DEMO-02), but it is no longer modeled as a blocking phase checkpoint.
 
 ## Recent Activity
 
 | Date | Activity |
 |------|----------|
+| 2026-02-15 | Removed blocking video checkpoint from Phase 05; submission checklist now uses hosted video URL with optional `demo/video.mp4` |
 | 2026-02-14 | 05-04 checkpoint reached: Task 1 complete (live command + video gate), Task 2 pending manual recording of `demo/video.mp4` |
 | 2026-02-14 | Completed 05-03 recording and submission consistency checklists |
 | 2026-02-14 | Completed 05-02 judge-facing README + architecture reference docs |
@@ -87,7 +88,7 @@ Progress: ███████████████░ 94% (16/17 plans comp
 ## Session Continuity
 
 - Last session: 2026-02-14T19:45:12Z
-- Stopped at: 05-04 Task 2 checkpoint (human-action)
-- Resume from: Record/add `demo/video.mp4`, then continue 05-04 completion + phase re-verification
+- Stopped at: Phase 05 video capture (manual submission step)
+- Resume from: Record/upload demo video (DEMO-02) and paste hosted URL into `demo/submission_checklist.md`
 
 *Last updated: 2026-02-14*

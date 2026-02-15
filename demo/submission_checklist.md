@@ -44,17 +44,21 @@ python3 demo/run_demo.py --help | rg -- "--dry-run|--live"
 python3 demo/run_demo.py --dry-run
 ```
 
-## 4) Final demo video verification gate (DEMO-02)
+## 4) Final demo video (DEMO-02)
 
-- [ ] Confirm final artifact exists at `demo/video.mp4`.
+- [ ] Hosted video URL: <paste link here>
 - [ ] Confirm video duration is in the target 1:50-2:10 window.
 - [ ] Confirm playback sanity: clear narration, no visible secrets, and full flow (config -> run -> brief evidence) is captured.
+- [ ] Optional (if committing the binary): confirm `demo/video.mp4` exists and matches the hosted video.
 
-Suggested local checks:
+Suggested local checks (optional):
 
 ```bash
-test -f demo/video.mp4
-ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 demo/video.mp4
+# Optional local artifact check
+test -f demo/video.mp4 || true
+
+# Optional duration sanity (if ffprobe is available)
+command -v ffprobe >/dev/null && ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 demo/video.mp4
 ```
 
 ## 5) Submission packaging checklist
@@ -65,7 +69,8 @@ ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:no
 - [ ] Include `demo/config.yaml`.
 - [ ] Include `demo/run_demo.py`.
 - [ ] Include `demo/recording_checklist.md`.
-- [ ] Include verified recorded video at `demo/video.mp4`.
+- [ ] Include the hosted demo video URL in submission text (see section 4).
+- [ ] Optional: if you choose to commit the binary, include `demo/video.mp4` (skip if size limits apply).
 - [ ] Confirm all links and paths in submission text resolve correctly.
 - [ ] Confirm no secrets, keys, or sensitive logs are packaged.
 

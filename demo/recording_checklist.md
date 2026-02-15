@@ -48,11 +48,11 @@ Use this checklist to record a polished 2-minute end-to-end demo quickly and con
 - [ ] Target duration: about 2:00 (acceptable range 1:50-2:10)
 - [ ] Resolution: 1080p preferred (720p minimum)
 - [ ] Audio: clear narration, no clipping
-- [ ] Output file path: `demo/video.mp4`
+- [ ] Output file path (local): `demo/video.mp4` (optional to commit; hosted URL is fine for submission)
 
 ## 4) Final QA before upload
 
 - [ ] Verify text is readable in full-screen playback.
 - [ ] Verify commands and file paths are visible when spoken.
 - [ ] Verify no secrets or private tokens appear on screen.
-- [ ] Verify exported file opens successfully from `demo/video.mp4`.
+- [ ] Verify exported file opens successfully in a media player.
