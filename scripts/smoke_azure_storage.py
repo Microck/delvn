@@ -14,9 +14,9 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from config.settings import get_settings
-from storage.cosmos import CosmosStore
-from storage.search import SearchStore
+from config.settings import get_settings  # noqa: E402
+from storage.cosmos import CosmosStore  # noqa: E402
+from storage.search import SearchStore  # noqa: E402
 
 
 def _missing_env(names: list[str]) -> list[str]:
