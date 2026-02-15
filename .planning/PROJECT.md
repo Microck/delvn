@@ -54,7 +54,14 @@ A multi-agent CTI (Cyber Threat Intelligence) platform that correlates threat fe
 ## Constraints
 
 - **Timeline**: 5 weeks (Feb 10 - Mar 15, 2026)
-- **Tech Stack**: Python, Microsoft Agent Framework, Azure AI Foundry
+- **Perfect Tech Stack**:
+  - **Language**: Python 3.12+ (ETL + parsing + scoring + embeddings iteration speed)
+  - **Runtime/Packaging**: `uv` + `pyproject.toml` + lockfile for reproducibility
+  - **Data modeling**: Pydantic v2
+  - **HTTP**: httpx
+  - **Reliability**: tenacity for retries/backoff
+  - **Azure integration**: Cosmos DB (`azure-cosmos`), Azure AI Search (`azure-search-documents`), Entra auth (`azure-identity`)
+  - **Testing**: pytest
 - **Model Access**: GPT-4o via Foundry
 - **Storage**: Azure Cosmos DB (threats), Azure AI Search (embeddings)
 - **APIs**: NVD API, AlienVault OTX API
