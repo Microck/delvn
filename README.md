@@ -1,42 +1,39 @@
 # Delvn
 
-Delvn is a multi-agent cyber threat intelligence pipeline that turns noisy CVE, threat intel, and security news feeds into a prioritized executive brief tailored to your stack. It is designed for fast enterprise triage: collect signals, correlate related activity, rank what matters, and generate a concise brief leadership can act on.
+Delvn is a multi-agent cyber threat intelligence pipeline that turns noisy CVE, threat intel, and security news feeds into a prioritized executive brief tailored to your stack.
+
+Built for: Microsoft AI Dev Days Hackathon 2026
+Categories: Best Enterprise Solution, Best Multi-Agent System
+Demo video: <paste hosted link>
+
+## Quickstart
+
+Judge-safe (no Azure writes):
+
+```bash
+uv sync --frozen
+uv run python demo/run_demo.py --dry-run
+uv run pytest
+```
+
+Live mode (requires Azure credentials):
+
+```bash
+uv run python demo/run_demo.py --live --config demo/config.yaml
+```
 
 ## Why This Matters
 
 - Reduces alert fatigue by filtering threat data against your actual stack.
 - Connects isolated signals (CVE, IOC, campaign/news) into explainable links.
-- Produces a demo-ready brief (`docs/demo_brief.md`) without custom dashboards.
+- Produces a demo-ready brief without custom dashboards.
 
 ## Architecture At A Glance
 
 ```text
-NVD API           AlienVault OTX           Security RSS Feeds
-   |                   |                          |
-   +-------------------+--------------------------+
-                           |
-                 Collector Agents (CVE/Intel/News)
-                           |
-                     UnifiedThreat records
-                           |
-      +-----------------------------------------------+
-      | Azure Cosmos DB (threats container)           |
-      | Azure AI Search (vector index: threats)       |
-      +-----------------------------------------------+
-                           |
-                     Correlator Agent
-                           |
-                 CorrelationLink records
-                           |
-      +-----------------------------------------------+
-      | Azure Cosmos DB (correlations container)      |
-      +-----------------------------------------------+
-                           |
-        Prioritizer Agent (uses stack profile from YAML)
-                           |
-                      Reporter Agent
-                           |
-           Markdown brief output + narration summary
+NVD API + OTX + RSS -> collector agents -> UnifiedThreat
+  -> (optional) Cosmos + AI Search -> correlator -> links
+  -> prioritizer (stack YAML) -> reporter -> markdown brief
 ```
 
 For deeper component details, see `docs/architecture.md`.
@@ -44,84 +41,56 @@ For deeper component details, see `docs/architecture.md`.
 ## Prerequisites
 
 - Python 3.11+
-- `uv` (for reproducible installs via `uv.lock`)
-- Azure resources for live mode:
-  - Azure Cosmos DB endpoint + key
-  - Azure AI Search endpoint + key
+- `uv` (reproducible installs via `uv.lock`)
 
-Required environment variables for `--live`:
+Required env vars for `--live`:
 
 - `COSMOS_ENDPOINT`
 - `COSMOS_KEY`
 - `SEARCH_ENDPOINT`
 - `SEARCH_KEY`
 
-Optional environment variables:
+Optional env vars:
 
 - `NVD_API_KEY` (higher NVD throughput)
 - `OTX_API_KEY` (subscribed OTX pulses)
 - `RSS_FEED_URLS` (comma-separated feed override)
-- `AZURE_OPENAI_ENDPOINT`
-- `AZURE_OPENAI_API_KEY`
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT`
-- `AZURE_OPENAI_API_VERSION`
+- Azure OpenAI embedding vars (optional)
 
-If Azure OpenAI embedding variables are not set, the correlator uses a deterministic hash embedding fallback so the pipeline stays runnable.
-
-## Quickstart
-
-1. Install dependencies (creates `.venv`).
-
-```bash
-uv sync --frozen
-```
-
-2. Create or update `.env` with your live credentials.
-
-```env
-COSMOS_ENDPOINT=https://<your-cosmos-account>.documents.azure.com:443/
-COSMOS_KEY=<your-cosmos-key>
-SEARCH_ENDPOINT=https://<your-search-service>.search.windows.net
-SEARCH_KEY=<your-search-key>
-
-# Optional
-NVD_API_KEY=<optional>
-OTX_API_KEY=<optional>
-```
-
-3. Validate pipeline orchestration safely (no external calls, no Azure writes).
-
-```bash
-uv run python demo/run_demo.py --dry-run
-```
-
-4. Run the live pipeline (collect -> correlate -> prioritize -> report).
-
-```bash
-uv run python demo/run_demo.py --live --config demo/config.yaml
-```
-
-5. Run the test suite.
-
-```bash
-uv run pytest
-```
+If embedding variables are not set, the correlator uses a deterministic hash embedding fallback so the pipeline stays runnable.
 
 ## Data Sources And Scope Notes
 
-- **NVD CVE API:** Vulnerability records and metadata.
-- **AlienVault OTX:** Indicators and pulse context (falls back to public pulses when no API key is available).
-- **RSS Security Feeds:** Defaults include BleepingComputer, The Hacker News, and CISA advisories.
+Sources:
 
-Scope constraints for this demo:
+- NVD CVE API
+- AlienVault OTX
+- RSS security feeds
+
+Scope constraints for v1:
 
 - Batch workflow (not real-time alerting)
-- No SIEM integration in v1
-- Three source families only (NVD, OTX, RSS)
-- Informational prioritization/reporting, not automated blocking
+- No SIEM integration
+- Three source families only
+- Informational prioritization/reporting (no automated blocking)
 
 ## Output Paths
 
 - Generated live brief: `docs/demo_brief.md` (configured in `demo/config.yaml`)
 - Committed sample brief for judges: `docs/example_brief.md`
 - Demo runner entrypoint: `demo/run_demo.py`
+
+## Verification
+
+```bash
+uv run pytest
+```
+
+## Safety
+
+- Prefer `--dry-run` when judging.
+- `--live` uses real credentials and may write to Azure resources.
+
+## License
+
+Apache-2.0 (see `LICENSE`).
