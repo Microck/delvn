@@ -1,20 +1,43 @@
 # Delvn
 
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 Delvn is a multi-agent cyber threat intelligence pipeline that turns noisy CVE, threat intel, and security news feeds into a prioritized executive brief tailored to your stack.
 
-Built for: Microsoft AI Dev Days Hackathon 2026
-Categories: Best Enterprise Solution, Best Multi-Agent System
-Demo video: <paste hosted link>
+It is designed for triage: collect signals, correlate related activity, rank what matters, and generate a concise brief a human can act on.
 
-## Quickstart
+## Features
 
-Judge-safe (no Azure writes):
+- Multi-source collection (CVE, threat intel, security news)
+- Correlation and prioritization based on a stack profile
+- Markdown brief output for easy sharing
+- Optional Azure integrations for storage and search
+
+## Installation
+
+Prereqs:
+- Python 3.11+
+- `uv`
 
 ```bash
 uv sync --frozen
+```
+
+## Quick Start
+
+Run the judge-safe demo path (no external writes):
+
+```bash
 uv run python demo/run_demo.py --dry-run
+```
+
+Run tests:
+
+```bash
 uv run pytest
 ```
+
+## Usage
 
 Live mode (requires Azure credentials):
 
@@ -22,26 +45,7 @@ Live mode (requires Azure credentials):
 uv run python demo/run_demo.py --live --config demo/config.yaml
 ```
 
-## Why This Matters
-
-- Reduces alert fatigue by filtering threat data against your actual stack.
-- Connects isolated signals (CVE, IOC, campaign/news) into explainable links.
-- Produces a demo-ready brief without custom dashboards.
-
-## Architecture At A Glance
-
-```text
-NVD API + OTX + RSS -> collector agents -> UnifiedThreat
-  -> (optional) Cosmos + AI Search -> correlator -> links
-  -> prioritizer (stack YAML) -> reporter -> markdown brief
-```
-
-For deeper component details, see `docs/architecture.md`.
-
-## Prerequisites
-
-- Python 3.11+
-- `uv` (reproducible installs via `uv.lock`)
+## Configuration
 
 Required env vars for `--live`:
 
@@ -53,43 +57,29 @@ Required env vars for `--live`:
 Optional env vars:
 
 - `NVD_API_KEY` (higher NVD throughput)
-- `OTX_API_KEY` (subscribed OTX pulses)
-- `RSS_FEED_URLS` (comma-separated feed override)
-- Azure OpenAI embedding vars (optional)
+- `OTX_API_KEY`
+- `RSS_FEED_URLS` (comma-separated)
 
-If embedding variables are not set, the correlator uses a deterministic hash embedding fallback so the pipeline stays runnable.
+If Azure OpenAI embedding variables are not set, the correlator uses a deterministic hash embedding fallback so the pipeline stays runnable.
 
-## Data Sources And Scope Notes
+## Documentation
 
-Sources:
+- Architecture: `docs/architecture.md`
+- Example brief: `docs/example_brief.md`
 
-- NVD CVE API
-- AlienVault OTX
-- RSS security feeds
-
-Scope constraints for v1:
-
-- Batch workflow (not real-time alerting)
-- No SIEM integration
-- Three source families only
-- Informational prioritization/reporting (no automated blocking)
-
-## Output Paths
+## Output
 
 - Generated live brief: `docs/demo_brief.md` (configured in `demo/config.yaml`)
-- Committed sample brief for judges: `docs/example_brief.md`
 - Demo runner entrypoint: `demo/run_demo.py`
 
-## Verification
+## Security
 
-```bash
-uv run pytest
-```
+`--live` uses real credentials and may write to Azure resources.
+Prefer `--dry-run` when evaluating the pipeline.
 
-## Safety
+## Contributing
 
-- Prefer `--dry-run` when judging.
-- `--live` uses real credentials and may write to Azure resources.
+Issues and pull requests are welcome.
 
 ## License
 
