@@ -1,65 +1,82 @@
-# Logo Prompts for Delvn
+# Logo Prompts for Delvn (Threat Fusion)
 
-**Project Context**: Multi-agent cyber threat intelligence pipeline that turns noisy CVE, threat intel, and security news feeds into a prioritized executive brief. Six specialized agents collect, correlate, and prioritize threats based on your tech stack.
-
-**Suggested Vibe**: Technical, professional, security-focused, modern
+**Project Context**: Multi-agent cyber threat intelligence pipeline that transforms CVE feeds, threat intel, and security news into prioritized executive briefs. Built for security teams who need to cut through noise and focus on what matters.
+**Suggested Vibe**: Technical, authoritative, intelligent — serious without being sterile
 
 ---
 
-## Prompt 1: Abstract Geometric — Fusion Concept
-```
-abstract geometric logo for Delvn, interlocking hexagons suggesting data fusion and convergence, sleek minimalist, flat one-color, centered on white, balanced negative space, Swiss design --ar 1:1 --stylize 70 --seed 101 --no gradient drop shadow 3D photo background texture glow complex lighting
-```
+## Color Palette
 
-## Prompt 2: Negative Space — Shield + Eye
-```
-negative-space logo for Delvn, shield shape with hidden eye symbol in negative space suggesting vigilance and protection, bold reduction, flat one-color, centered on white, balanced negative space, Paul Rand style --ar 1:1 --stylize 75 --seed 102 --no gradient drop shadow 3D photo background texture glow complex lighting
-```
+| Role | Color | Hex | Rationale |
+|------|-------|-----|-----------|
+| Primary | Deep Obsidian | `#1a1d23` | Commands authority, reflects the serious nature of threat intelligence. Dark enough to feel premium, warm enough to avoid cold corporate vibes. |
+| Secondary | Electric Cyan | `#00d4aa` | Represents insight and discovery — the "signal" emerging from noise. Distinct from typical security blue, with a slightly teal cast that feels modern. |
+| Accent | Alert Amber | `#f59e0b` | For priority and urgency. Security tools need to highlight risk; amber communicates warning without the panic of red. |
+| Neutral | Steel Smoke | `#64748b` | For supporting text and secondary elements. Cool enough to recede, warm enough to avoid feeling sterile. |
 
-## Prompt 3: Monoline — Network Nodes
-```
-monoline logo for Delvn, continuous single-stroke line connecting six nodes in a network formation suggesting multi-agent coordination, precise geometry, flat one-color, centered on white, balanced negative space, architectural --ar 1:1 --stylize 70 --seed 103 --no gradient drop shadow 3D photo background texture glow complex lighting
-```
+**Palette Story**: Obsidian anchors the brand in seriousness. Electric Cyan represents the intelligence breakthrough — finding the signal in noise. Alert Amber flags what demands attention. Together, they say: "We find threats. We tell you what matters."
 
-## Prompt 4: Lettermark — Interlocking D
-```
-lettermark logo for Delvn, stylized letter D formed by two interlocking angular shapes suggesting security layers, refined proportions, flat one-color, centered on white, balanced negative space, Sagi Haviv style --ar 1:1 --stylize 75 --seed 104 --no gradient drop shadow 3D photo background texture glow complex lighting
-```
+---
 
-## Prompt 5: Pictorial Symbol — Radar/Sweep
+## Prompt 1: Abstract Geometric — Signal Fusion
 ```
-pictorial logo for Delvn, minimalist radar sweep icon with three concentric arcs suggesting threat detection and monitoring, bold geometric reduction, flat one-color, centered on white, balanced negative space, modernist --ar 1:1 --stylize 70 --seed 105 --no gradient drop shadow 3D photo background texture glow complex lighting
-```
-
-## Prompt 6: Emblem/Badge — Hex Shield
-```
-emblem logo for Delvn, hexagonal shield with abstract lightning bolt suggesting threat intelligence and rapid response, stamp-ready circular containment, flat one-color, centered on white, balanced negative space, industrial --ar 1:1 --stylize 70 --seed 106 --no gradient drop shadow 3D photo background texture glow complex lighting
-```
-
-## Prompt 7: Tech-minimal — Data Stream
-```
-abstract logo for Delvn, three parallel horizontal lines transforming into a single focused point suggesting signal-to-intelligence pipeline, grid-aligned, flat one-color, centered on white, balanced negative space, tech-minimal --ar 1:1 --stylize 65 --seed 107 --no gradient drop shadow 3D photo background texture glow complex lighting
+abstract geometric logo for Delvn, three angular shapes converging into a unified focal point, flat Electric Cyan #00d4aa on white, centered, balanced negative space, modernist minimal --ar 1:1 --stylize 70 --no gradient shadow 3D photo background
 ```
 
 ---
 
-## Design Notes
+## Prompt 2: Monogram — Layered Depth
+```
+monogram logo for Delvn, letter D formed by intersecting angular paths, two-color Deep Obsidian #1a1d23 and Electric Cyan #00d4aa, centered on white, clean geometric construction, balanced negative space --ar 1:1 --stylize 75 --no gradient shadow 3D photo background
+```
 
-**Recommended Colors** (for secondary application):
-- Primary: Deep navy `#0A1628` or dark slate `#1E293B`
-- Accent: Amber `#F59E0B` (alert/warning) or Teal `#14B8A6` (security/trust)
-- Mono: Pure white on dark, or pure black on light
+---
 
-**Rationale**:
-- **Geometric/hexagonal forms** evoke security architecture and structured intelligence
-- **Network/node patterns** represent the multi-agent system
-- **Shield motifs** are classic cybersecurity but should be abstracted to avoid cliché
-- **Radar/sweep concepts** connect to threat detection and monitoring
-- **Fusion/convergence imagery** directly maps to the product name and function
-- **Single-stroke/monoline** style fits the CLI/developer tool aesthetic
+## Prompt 3: Symbol — Radar Pulse
+```
+symbol logo for Delvn, concentric angular rings converging to center point suggesting radar detection, flat Deep Obsidian #1a1d23 with Electric Cyan #00d4aa accent dot at center, centered on white, balanced negative space, technical precision --ar 1:1 --stylize 70 --no gradient shadow 3D photo background
+```
 
-**Avoid**:
-- Literal lock icons
-- Generic globe/world imagery
-- Overly aggressive "cyber" aesthetics (matrix code, circuit boards)
-- Multiple colors (keep mono for versatility)
+---
+
+## Prompt 4: Negative Space — Hidden Threat
+```
+negative space logo for Delvn, solid Deep Obsidian #1a1d23 shape with Electric Cyan #00d4aa cutout forming an abstract eye or lens shape, centered on white, balanced composition, sophisticated minimal --ar 1:1 --stylize 65 --no gradient shadow 3D photo background
+```
+
+---
+
+## Prompt 5: Abstract — Data Streams
+```
+abstract logo for Delvn, multiple parallel lines converging and separating like data streams being filtered, two-color Electric Cyan #00d4aa and Alert Amber #f59e0b on white, centered, balanced negative space, dynamic but controlled --ar 1:1 --stylize 70 --no gradient shadow 3D photo background
+```
+
+---
+
+## Prompt 6: Geometric Shield — Modern Armor
+```
+geometric logo for Delvn, abstract hexagonal shield shape composed of interlocking angular segments, flat Deep Obsidian #1a1d23 with single Electric Cyan #00d4aa accent edge, centered on white, balanced negative space, strong but not aggressive --ar 1:1 --stylize 75 --no gradient shadow 3D photo background
+```
+
+---
+
+## Prompt 7: Minimal Wordmark Accent
+```
+minimal wordmark logo for Delvn, clean sans-serif text with small geometric accent mark above, monochromatic Deep Obsidian #1a1d23 on white, centered, generous letter spacing, balanced negative space, professional understated --ar 1:1 --stylize 60 --no gradient shadow 3D photo background
+```
+
+---
+
+## Usage Notes
+
+**Primary applications:**
+- Dark mode UI: Use Electric Cyan on Deep Obsidian background
+- Light mode UI: Deep Obsidian marks with Cyan accents
+- Priority indicators: Alert Amber for high-risk items
+- Print/dark backgrounds: Full-contrast white variants
+
+**Avoid:**
+- Gradients (weakens the technical authority)
+- Rounded/cute shapes (undermines the serious domain)
+- Multiple accent colors in single mark (dilutes impact)
+- Photorealistic or 3D effects (looks dated in security context)
