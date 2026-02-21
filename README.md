@@ -8,33 +8,14 @@ It is designed for triage: collect signals, correlate related activity, rank wha
 
 Built for the Microsoft AI Dev Days Hackathon 2026.
 
-<!-- top-readme: begin -->
+## What It Does
 
-## Development
+- Collects signals (CVE + intel + security news)
+- Correlates related items into a single narrative
+- Prioritizes against your stack profile
+- Generates an executive-ready markdown brief
 
-- [`pyproject.toml`](pyproject.toml)
-
-## Testing
-
-- [`tests/`](tests/)
-
-## Support
-
-## Releases
-
-## Roadmap
-
-<!-- top-readme: end -->
-
-## What You Get
-
-- Multi-source collection (NVD CVEs, AlienVault OTX intel, security RSS)
-- Correlation that links related activity into a single narrative
-- Prioritization against a stack profile (products/platforms/keywords/exclude)
-- Executive markdown brief output (easy to paste into tickets, email, docs)
-- Optional Azure backing services (Cosmos DB + Azure AI Search)
-
-## Installation
+## Quickstart
 
 Prereqs:
 - Python 3.11+
@@ -42,27 +23,25 @@ Prereqs:
 
 ```bash
 uv sync --frozen
+uv run python demo/run_demo.py --dry-run
 ```
 
-## Quick Start
+Example output:
+- `docs/example_brief.md`
 
-Run the judge-safe demo path (no external APIs and no Azure writes):
+## Installation
+
+```bash
+uv sync --frozen
+```
+
+## Usage
+
+Demo (judge-safe):
 
 ```bash
 uv run python demo/run_demo.py --dry-run
 ```
-
-Want to see what the final artifact looks like?
-
-- Example brief: `docs/example_brief.md`
-
-Run tests:
-
-```bash
-uv run pytest
-```
-
-## Usage
 
 Live mode (requires Azure credentials):
 
@@ -70,59 +49,65 @@ Live mode (requires Azure credentials):
 uv run python demo/run_demo.py --live --config demo/config.yaml
 ```
 
-## Configure Your Stack Profile
-
-Edit `demo/config.yaml`:
-
-- `stack.products`: primary technologies you run (used as the strongest signal)
-- `stack.platforms`: environment keywords (e.g., Linux)
-- `stack.keywords`: extra terms you want to boost
-- `stack.exclude`: terms to down-rank
-
-This config is intentionally small so you can tweak it during a demo.
-
-## How It Works
-
-1. Collect signals (CVE + intel + news) into a canonical `UnifiedThreat` record.
-2. Correlate related items via embeddings + similarity search (hash-vector fallback keeps demos runnable without model creds).
-3. Prioritize by relevance to your declared stack.
-4. Generate an executive markdown brief.
-
 ## Configuration
 
-Required env vars for `--live`:
+### Stack Profile
 
+Edit `demo/config.yaml`:
+- `stack.products`
+- `stack.platforms`
+- `stack.keywords`
+- `stack.exclude`
+
+### Environment Variables
+
+Required for `--live`:
 - `COSMOS_ENDPOINT`
 - `COSMOS_KEY`
 - `SEARCH_ENDPOINT`
 - `SEARCH_KEY`
 
-Optional env vars:
-
-- `NVD_API_KEY` (higher NVD throughput)
+Optional:
+- `NVD_API_KEY`
 - `OTX_API_KEY`
-- `RSS_FEED_URLS` (comma-separated)
+- `RSS_FEED_URLS`
 - `AZURE_OPENAI_ENDPOINT`
 - `AZURE_OPENAI_API_KEY`
 - `AZURE_OPENAI_EMBEDDING_DEPLOYMENT`
 - `AZURE_OPENAI_API_VERSION`
 
-If Azure OpenAI embedding variables are not set, the correlator uses a deterministic hash embedding fallback so the pipeline stays runnable.
+## Output
+
+- Generated brief: `docs/demo_brief.md` (set by `run.report_output_path` in `demo/config.yaml`)
+- Demo entrypoint: `demo/run_demo.py`
+
+## Architecture
+
+- High-level design: `docs/architecture.md`
+
+## Development
+
+TODO: add formatter/linter/typecheck commands and repo layout pointers.
+
+## Testing
+
+```bash
+uv run pytest
+```
 
 ## Documentation
 
-- Architecture: `docs/architecture.md`
-- Example brief: `docs/example_brief.md`
+- `docs/architecture.md`
+- `docs/example_brief.md`
 
-## Output
+## Support
 
-- Generated live brief: `docs/demo_brief.md` (configured in `demo/config.yaml`)
-- Demo runner entrypoint: `demo/run_demo.py`
+TODO: add Issues/Discussions link and a debugging checklist.
 
 ## Security
 
 `--live` uses real credentials and may write to Azure resources.
-Prefer `--dry-run` when evaluating the pipeline.
+Prefer `--dry-run` for evaluation.
 
 ## Contributing
 
@@ -131,3 +116,11 @@ Issues and pull requests are welcome.
 ## License
 
 Apache-2.0 (see `LICENSE`).
+
+## Releases
+
+TODO: link to releases/changelog (or state that this is a hackathon prototype).
+
+## Roadmap
+
+TODO: add 3-5 bullets for near-term improvements.
