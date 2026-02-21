@@ -1,7 +1,14 @@
 # Logo Prompts for Delvn (Threat Fusion)
 
-**Project Context**: Multi-agent cyber threat intelligence pipeline that transforms CVE feeds, threat intel, and security news into prioritized executive briefs. Built for security teams who need to cut through noise and focus on what matters.
-**Suggested Vibe**: Technical, authoritative, intelligent — serious without being sterile
+**Project Context**: Delvn is a multi-agent cyber threat intelligence pipeline that ingests CVE, intel, and security news signals, correlates related items, prioritizes against a stack profile, and outputs an executive-ready markdown brief.
+
+**Suggested Vibe**: Technical, authoritative, signal-over-noise, executive-ready
+
+**Signature Ingredients**:
+- Artifacts: CVE + intel + RSS feeds, correlation links, stack profile keywords, executive markdown brief
+- Actions: ingest, normalize, correlate, prioritize, brief
+- Metaphor: signal funnel into a brief
+- Avoid: generic shields/locks, matrix code, skulls/hackers, globes, generic radar
 
 ---
 
@@ -9,74 +16,87 @@
 
 | Role | Color | Hex | Rationale |
 |------|-------|-----|-----------|
-| Primary | Deep Obsidian | `#1a1d23` | Commands authority, reflects the serious nature of threat intelligence. Dark enough to feel premium, warm enough to avoid cold corporate vibes. |
-| Secondary | Electric Cyan | `#00d4aa` | Represents insight and discovery — the "signal" emerging from noise. Distinct from typical security blue, with a slightly teal cast that feels modern. |
-| Accent | Alert Amber | `#f59e0b` | For priority and urgency. Security tools need to highlight risk; amber communicates warning without the panic of red. |
-| Neutral | Steel Smoke | `#64748b` | For supporting text and secondary elements. Cool enough to recede, warm enough to avoid feeling sterile. |
+| Primary | Deep Obsidian | `#1a1d23` | Serious, premium base for CTI and leadership-facing reporting |
+| Secondary | Signal Cyan | `#00d4aa` | The signal emerging from noise; distinct from generic security blue |
+| Accent | Priority Amber | `#f59e0b` | Risk highlight and triage emphasis without panic-red |
+| Neutral | Steel Smoke | `#64748b` | Supporting elements for docs and UI without stealing focus |
 
-**Palette Story**: Obsidian anchors the brand in seriousness. Electric Cyan represents the intelligence breakthrough — finding the signal in noise. Alert Amber flags what demands attention. Together, they say: "We find threats. We tell you what matters."
-
----
-
-## Prompt 1: Abstract Geometric — Signal Fusion
-```
-abstract geometric logo for Delvn, three angular shapes converging into a unified focal point, flat Electric Cyan #00d4aa on white, centered, balanced negative space, modernist minimal --ar 1:1 --stylize 70 --no gradient shadow 3D photo background
-```
+**Palette Story**: Obsidian is the noise and gravity of security work. Cyan is the signal you extract. Amber is what you must act on.
 
 ---
 
-## Prompt 2: Monogram — Layered Depth
+## Prompt 1: Abstract Geometric - Funnel to Brief
 ```
-monogram logo for Delvn, letter D formed by intersecting angular paths, two-color Deep Obsidian #1a1d23 and Electric Cyan #00d4aa, centered on white, clean geometric construction, balanced negative space --ar 1:1 --stylize 75 --no gradient shadow 3D photo background
+abstract geometric logo for Delvn, three thin feed lines merging into a clean funnel shape that outputs a single markdown document icon with three bullet bars, sleek geometric, flat Signal Cyan #00d4aa on white, centered, balanced negative space, Swiss design --ar 1:1 --stylize 70 --seed 101 --no gradient --no drop shadow --no bevel --no 3D --no reflection --no photo --no texture --no background scene --no glow --no complex lighting
 ```
+
+Concept: Visualizes the full pipeline: multiple signals become one executive brief.
 
 ---
 
-## Prompt 3: Symbol — Radar Pulse
+## Prompt 2: Monoline - Three Feeds, One Narrative
 ```
-symbol logo for Delvn, concentric angular rings converging to center point suggesting radar detection, flat Deep Obsidian #1a1d23 with Electric Cyan #00d4aa accent dot at center, centered on white, balanced negative space, technical precision --ar 1:1 --stylize 70 --no gradient shadow 3D photo background
+monoline logo for Delvn, continuous single stroke forming three input lines that weave into one page outline (brief) with a single highlighted dot, precise geometry, two-color Deep Obsidian #1a1d23 stroke with Signal Cyan #00d4aa highlight, centered on white, badge-ready --ar 1:1 --stylize 66 --seed 112 --no gradient --no drop shadow --no bevel --no 3D --no reflection --no photo --no texture --no background scene --no glow --no complex lighting
 ```
+
+Concept: A single continuous line implies orchestration and correlation without using generic network nodes.
 
 ---
 
-## Prompt 4: Negative Space — Hidden Threat
+## Prompt 3: Negative Space - CVE Tag Cutout
 ```
-negative space logo for Delvn, solid Deep Obsidian #1a1d23 shape with Electric Cyan #00d4aa cutout forming an abstract eye or lens shape, centered on white, balanced composition, sophisticated minimal --ar 1:1 --stylize 65 --no gradient shadow 3D photo background
+negative-space logo for Delvn, solid document icon where the corner fold forms a tag-like cutout (CVE label shape) and one bullet row is emphasized, bold reduction, flat Deep Obsidian #1a1d23 on white, centered, balanced negative space, modernist --ar 1:1 --stylize 68 --seed 77 --no gradient --no drop shadow --no bevel --no 3D --no reflection --no photo --no texture --no background scene --no glow --no complex lighting
 ```
+
+Concept: The CVE label and executive brief are embedded as shapes, not text.
 
 ---
 
-## Prompt 5: Abstract — Data Streams
+## Prompt 4: Lettermark - D from Brief Cards
 ```
-abstract logo for Delvn, multiple parallel lines converging and separating like data streams being filtered, two-color Electric Cyan #00d4aa and Alert Amber #f59e0b on white, centered, balanced negative space, dynamic but controlled --ar 1:1 --stylize 70 --no gradient shadow 3D photo background
+lettermark logo for Delvn, stylized capital D built from three stacked rounded-rectangle "brief cards" with one inner alignment line like a markdown bullet, refined proportions, flat Deep Obsidian #1a1d23 with Signal Cyan #00d4aa accent edge, centered on white, balanced negative space --ar 1:1 --stylize 70 --seed 203 --no gradient --no drop shadow --no bevel --no 3D --no reflection --no photo --no texture --no background scene --no glow --no complex lighting
 ```
+
+Concept: A D monogram that stays tied to the reporting output (cards/brief) rather than abstract cyber imagery.
 
 ---
 
-## Prompt 6: Geometric Shield — Modern Armor
+## Prompt 5: Pictorial Symbol - Executive Brief Highlight
 ```
-geometric logo for Delvn, abstract hexagonal shield shape composed of interlocking angular segments, flat Deep Obsidian #1a1d23 with single Electric Cyan #00d4aa accent edge, centered on white, balanced negative space, strong but not aggressive --ar 1:1 --stylize 75 --no gradient shadow 3D photo background
+pictorial logo for Delvn, minimal markdown document icon with three bullet lines and one highlighted bullet dot, bold reduction, two-color Deep Obsidian #1a1d23 with Priority Amber #f59e0b highlight, centered on white, balanced negative space, Sagi Haviv style --ar 1:1 --stylize 72 --seed 88 --no gradient --no drop shadow --no bevel --no 3D --no reflection --no photo --no texture --no background scene --no glow --no complex lighting
 ```
+
+Concept: Delvn's value is prioritization; the highlight bullet makes triage explicit.
 
 ---
 
-## Prompt 7: Minimal Wordmark Accent
+## Prompt 6: Emblem/Badge - Triage Seal
 ```
-minimal wordmark logo for Delvn, clean sans-serif text with small geometric accent mark above, monochromatic Deep Obsidian #1a1d23 on white, centered, generous letter spacing, balanced negative space, professional understated --ar 1:1 --stylize 60 --no gradient shadow 3D photo background
+emblem logo for Delvn, circular seal containing a funnel icon feeding into a small brief page with a single star marker, stamp-ready, flat Deep Obsidian #1a1d23 with Priority Amber #f59e0b accent, centered on white, refined proportions --ar 1:1 --stylize 70 --seed 156 --no gradient --no drop shadow --no bevel --no 3D --no reflection --no photo --no texture --no background scene --no glow --no complex lighting
 ```
+
+Concept: Works well in decks and docs as a "briefing" stamp.
 
 ---
 
-## Usage Notes
+## Prompt 7: Tech-minimal - Correlation Link to Bullet
+```
+tech-minimal logo for Delvn, grid-aligned correlation glyph where a single link line connects two small blocks and resolves into a short bullet list on the right, precise geometry, flat Steel Smoke #64748b with Signal Cyan #00d4aa accent, centered on white, architectural minimal --ar 1:1 --stylize 63 --seed 301 --no gradient --no drop shadow --no bevel --no 3D --no reflection --no photo --no texture --no background scene --no glow --no complex lighting
+```
 
-**Primary applications:**
-- Dark mode UI: Use Electric Cyan on Deep Obsidian background
-- Light mode UI: Deep Obsidian marks with Cyan accents
-- Priority indicators: Alert Amber for high-risk items
-- Print/dark backgrounds: Full-contrast white variants
+Concept: CorrelationLink plus reporting, rendered as a single compact icon.
 
-**Avoid:**
-- Gradients (weakens the technical authority)
-- Rounded/cute shapes (undermines the serious domain)
-- Multiple accent colors in single mark (dilutes impact)
-- Photorealistic or 3D effects (looks dated in security context)
+---
+
+## Recommended Prompt (Recommended)
+
+**Use**: Prompt 1
+
+**Why**:
+- Closest semantic match to the product: multiple feeds -> one executive brief
+- Distinct from generic CTI logos because it shows the brief output, not a shield/radar
+- Reads well small (funnel + page silhouette stays legible)
+
+**Runner-ups**:
+- Prompt 5: best if you want the most favicon-friendly icon for the brief output
+- Prompt 4: best if you want a lettermark for brand recognition in headers
