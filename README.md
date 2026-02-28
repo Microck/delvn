@@ -7,7 +7,7 @@
 
 **A multi-agent CTI pipeline that turns raw CVE feeds and threat intel into a prioritized executive brief tailored to your stack.**
 
-Delvn ingests signals from three source families — NVD CVEs, AlienVault OTX intel pulses, and security RSS advisories — correlates related activity using vector similarity, ranks every finding against your declared technology stack, and renders a concise markdown brief a human can act on.
+Delvn ingests signals from three source families: NVD CVEs, AlienVault OTX intel pulses, and security RSS advisories - correlates related activity using vector similarity, ranks every finding against your declared technology stack, and renders a concise markdown brief a human can act on.
 
 Built for the **Microsoft AI Dev Days Hackathon 2026**.
 
@@ -42,7 +42,7 @@ RSS advisories ───────┘                                         
 
 - **Three ingestion paths**: NVD CVEs (paginated), OTX pulses (subscribed + public fallback), and configurable RSS feeds run as independent collector agents.
 - **Vector correlation**: The correlator embeds threat text with Azure OpenAI (falls back to deterministic hash vectors when credentials are absent), indexes into Azure AI Search, and links nearest-neighbor pairs above a confidence threshold.
-- **Stack-aware prioritization**: Every threat is scored `HIGH / MEDIUM / LOW / NONE` based on keyword overlap with your `products`, `platforms`, and `keywords` list — with `HIGH` requiring both a product match and severity ≥ 7.0 or an exploited tag.
+- **Stack-aware prioritization**: Every threat is scored `HIGH / MEDIUM / LOW / NONE` based on keyword overlap with your `products`, `platforms`, and `keywords` list - with `HIGH` requiring both a product match and severity ≥ 7.0 or an exploited tag.
 - **Executive brief rendering**: The reporter converts ranked threats into structured `BriefEntry` objects with headlines, evidence, and recommended actions, then writes a markdown file ready for review.
 - **Safe by default**: `--dry-run` validates config and prints the planned pipeline without any external API calls or Azure writes.
 
@@ -59,7 +59,7 @@ RSS advisories ───────┘                                         
 - Scores relevance: `HIGH` (product + severity≥7 or exploited) → `MEDIUM` (product match) → `LOW` (platform/keyword) → `NONE`
 - Generates an `ExecutiveBrief` with top risks, notable mentions, evidence, and recommended actions
 - Renders a clean executive markdown brief for leadership review
-- Dry-run mode — safe for judges, CI, and local rehearsal (no credentials needed)
+- Dry-run mode (safe for judges, CI, and local rehearsal; no credentials needed)
 - Exponential-backoff HTTP client shared across all integrations (up to 5 retries)
 - Hash-based deterministic embedding fallback when Azure OpenAI credentials are absent
 
@@ -176,10 +176,10 @@ run:
 ```
 
 **Scoring rules:**
-- `HIGH` — product match + (severity ≥ 7.0 or `exploited` tag)
-- `MEDIUM` — product match only
-- `LOW` — platform or keyword match (no product match)
-- `NONE` — no stack keyword found in threat content
+- `HIGH` - product match + (severity ≥ 7.0 or `exploited` tag)
+- `MEDIUM` - product match only
+- `LOW` - platform or keyword match (no product match)
+- `NONE` - no stack keyword found in threat content
 
 ### Environment Variables
 
@@ -417,13 +417,13 @@ Issues and pull requests are welcome. Please open an issue to discuss significan
 
 Never commit a `.env` file containing real credentials. The `.gitignore` excludes `.env` by default.
 
-API keys (`NVD_API_KEY`, `OTX_API_KEY`, `COSMOS_KEY`, `SEARCH_KEY`, `AZURE_OPENAI_API_KEY`) should be stored as secrets in your CI environment or a secrets manager — not in `demo/config.yaml` or source code.
+API keys (`NVD_API_KEY`, `OTX_API_KEY`, `COSMOS_KEY`, `SEARCH_KEY`, `AZURE_OPENAI_API_KEY`) should be stored as secrets in your CI environment or a secrets manager, not in `demo/config.yaml` or source code.
 
 ---
 
 ## License
 
-Apache-2.0 — see [`LICENSE`](LICENSE).
+Apache-2.0. See [`LICENSE`](LICENSE).
 
 ---
 
