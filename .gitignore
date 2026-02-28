@@ -12,6 +12,7 @@ __pycache__/
 .ruff_cache/
 .coverage
 htmlcov/
+coverage.xml
 
 # Virtual environments
 .venv/
@@ -24,6 +25,9 @@ env/
 dist/
 build/
 
+# uv
+.python-version
+
 # Environment files (never commit secrets)
 .env
 .env.*
@@ -34,6 +38,9 @@ build/
 Thumbs.db
 .idea/
 .vscode/
+*.swp
+*.swo
+*~
 
 # Node (if any tools get added later)
 node_modules/
@@ -42,6 +49,12 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Azure Functions local settings (may contain secrets)
+local.settings.json
+
+# Generated demo brief (produced at runtime, not source)
+docs/demo_brief.md
+
 # Generated artifacts
 artifacts/
 recordings/
@@ -49,6 +62,7 @@ test-results/
 playwright-report/
 
 # Local runtime logs / scratch
+*.log
 mcp-server.log
 mcp-server-error.log
 session-*.md
