@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/brand/logo-horizontal-dark.svg">
-  <img alt="Delvn" src="docs/brand/logo-horizontal.svg" width="640">
+  <img alt="Delvn" src="docs/brand/logo-horizontal.svg" width="240">
 </picture>
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
