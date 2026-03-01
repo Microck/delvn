@@ -273,28 +273,28 @@ See `docs/example_brief.md` for the full example.
 ```mermaid
 flowchart TD
     subgraph Ingestion
-        A1[cve_agent\nNVD 2.0 API]
-        A2[intel_agent\nAlienVault OTX]
-        A3[news_agent\nSecurity RSS]
-    end
+        A1[cve_agent<br>NVD 2.0 API]
+        A2[intel_agent<br>AlienVault OTX]
+        A3[news_agent<br>Security RSS]
+        end
 
-    subgraph Storage
-        C1[(Cosmos DB\nthreats container)]
-        C2[(Azure AI Search\nthreats index)]
-    end
+        subgraph Storage
+        C1[(Cosmos DB<br>threats container)]
+        C2[(Azure AI Search<br>threats index)]
+        end
 
-    subgraph Correlation
-        B1[correlator_agent\nEmbed + HNSW query]
-        B2[(Cosmos DB\ncorrelations container)]
-    end
+        subgraph Correlation
+        B1[correlator_agent<br>Embed + HNSW query]
+        B2[(Cosmos DB<br>correlations container)]
+        end
 
-    subgraph Prioritization
-        D1[prioritizer_agent\nStack profile scoring]
-    end
+        subgraph Analysis
+        D1[prioritizer_agent<br>Stack profile scoring]
+        end
 
-    subgraph Reporting
-        E1[reporter_agent\nBrief assembly]
-        E2[render_brief_md\nMarkdown renderer]
+        subgraph Output
+        E1[reporter_agent<br>Brief assembly]
+        E2[render_brief_md<br>Markdown renderer]
         E3[docs/demo_brief.md]
     end
 
