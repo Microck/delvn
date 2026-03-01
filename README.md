@@ -7,6 +7,8 @@
 
 **A multi-agent CTI pipeline that turns raw CVE feeds and threat intel into a prioritized executive brief tailored to your stack.**
 
+Taking its name from the verb **"Delve"**, this project is designed to search deeply through massive volumes of threat intelligence to surface the specific risks that matter to your enterprise.
+
 Delvn ingests signals from three source families: NVD CVEs, AlienVault OTX intel pulses, and security RSS advisories - correlates related activity using vector similarity, ranks every finding against your declared technology stack, and renders a concise markdown brief a human can act on.
 
 Built for the **Microsoft AI Dev Days Hackathon 2026**.
