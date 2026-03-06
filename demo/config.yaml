@@ -1,17 +1,17 @@
 stack:
   products:
-    - Apache HTTP Server
-    - PostgreSQL
-    - React
-    - Linux Kernel
-    - OpenSSL
+    - AIOHTTP
+    - Spinnaker
+    - Anthropic MCP SDK
+    - JavaScript
+    - Python
   platforms:
     - Linux
   keywords:
-    - httpd
-    - postgres
-    - frontend
-    - server
+    - async
+    - node
+    - typescript
+    - python
   exclude:
     - Windows
 
