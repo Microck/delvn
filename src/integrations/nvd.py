@@ -67,12 +67,15 @@ def fetch_recent_cves(
     }
     if pub_start is not None:
         params["pubStartDate"] = _format_pub_start(pub_start)
+        params["pubEndDate"] = _format_pub_start(datetime.now(timezone.utc))
 
     headers = _build_headers()
     start_index = 0
     cve_payloads: list[dict[str, Any]] = []
+    max_pages = 5
+    current_page = 0
 
-    while True:
+    while current_page < max_pages:
         params["startIndex"] = start_index
         response = get_json(NVD_CVE_ENDPOINT, headers=headers, params=params)
         if not isinstance(response, dict):
@@ -91,6 +94,7 @@ def fetch_recent_cves(
                 cve_payloads.append(payload)
 
         start_index += len(vulnerabilities)
+        current_page += 1
 
         total_results = _to_int(response.get("totalResults"))
         if total_results is not None and start_index >= total_results:

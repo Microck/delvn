@@ -3,18 +3,21 @@ stack:
     - Apache HTTP Server
     - PostgreSQL
     - React
+    - Linux Kernel
+    - OpenSSL
   platforms:
     - Linux
   keywords:
     - httpd
     - postgres
     - frontend
+    - server
   exclude:
     - Windows
 
 run:
-  collection_window_days: 7
-  max_items_per_source: 25
+  collection_window_days: 60
+  max_items_per_source: 50
   cve_results_per_page: 25
   intel_limit: 25
   correlation_limit: 120
