@@ -189,7 +189,7 @@ def normalize_nvd_cve(payload: dict[str, Any]) -> UnifiedThreat:
     )
 
     return UnifiedThreat(
-        id=f"nvd:{cve_id}",
+        id=f"nvd-{cve_id}",
         source="nvd",
         type="cve",
         title=cve_id,
@@ -235,8 +235,9 @@ def normalize_otx_indicator(payload: dict[str, Any]) -> UnifiedThreat:
     if isinstance(tags_value, list):
         tags.extend(_to_str(tag) for tag in tags_value)
 
+    safe_value = indicator_value.replace(":", "-").replace(".", "-").replace("/", "-")
     return UnifiedThreat(
-        id=f"otx:{indicator_type}:{indicator_value}",
+        id=f"otx-{indicator_type}-{safe_value}",
         source="otx",
         type="indicator",
         title=title,
@@ -263,8 +264,11 @@ def normalize_rss_item(payload: dict[str, Any]) -> UnifiedThreat:
     title = _to_str(payload.get("title") or "Untitled security item")
     summary = _to_str(payload.get("summary") or payload.get("description"))
 
+    safe_source = source.replace(":", "-").replace("/", "-").replace(".", "-")
+    safe_id = base_id.replace(":", "-").replace("/", "-").replace(".", "-").replace("?", "-").replace("=", "-")
+    
     return UnifiedThreat(
-        id=f"{source}:{base_id}",
+        id=f"{safe_source}-{safe_id}",
         source=source,
         type="news",
         title=title,

@@ -47,7 +47,12 @@ class SearchStore:
         index = SearchIndex(
             name=index_name,
             fields=[
-                SimpleField(name="id", type=SearchFieldDataType.String, key=True),
+                SimpleField(
+                    name="id",
+                    type=SearchFieldDataType.String,
+                    key=True,
+                    filterable=True,
+                ),
                 SimpleField(
                     name="source", type=SearchFieldDataType.String, filterable=True
                 ),
