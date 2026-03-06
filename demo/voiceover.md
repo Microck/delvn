@@ -19,15 +19,15 @@ Our collection swarm pulls data from NVD, AlienVault, and breaking news feeds. A
 
 But the real magic is the Prioritization Agent. It cross-references these correlated threats against your company's actual infrastructure profile, producing a tailored executive brief.
 
-Let me show you a pipeline run. Our mock enterprise uses Apache, PostgreSQL, and React. 
+Let me show you a pipeline run. Our mock enterprise uses a standard web stack including Linux, OpenSSL, and React.
 
-The collection agents have just gathered dozens of raw reports. The correlation engine is scoring them based on confidence and impact.
+The collection agents have just gathered dozens of raw reports from the government and news feeds. The correlation engine is scoring them based on confidence and impact.
 
 Now look at the output. 
 
-Delvn generated a clean, actionable brief. It filtered out the noise and highlighted a critical PostgreSQL vulnerability, linking it directly to active chatter on hacker forums. 
+Delvn generated a clean, actionable brief. It filtered out the noise and highlighted a medium-risk advisory related to OpenSSL, linking it directly to eighteen related threats in our database. 
 
-It also flagged an emerging Apache risk, skipping the irrelevant iOS and Windows threats entirely. 
+It also flagged several low-level server misconfigurations as notable mentions, skipping the irrelevant iOS and Windows threats entirely. 
 
 From global noise to targeted intelligence in seconds.
 
