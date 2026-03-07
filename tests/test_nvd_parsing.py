@@ -25,7 +25,7 @@ def _nvd_payload() -> dict[str, object]:
 def test_normalize_nvd_extracts_cve_id_and_description() -> None:
     threat = normalize_nvd_cve(_nvd_payload())
 
-    assert threat.id == "nvd:CVE-2026-4242"
+    assert threat.id == "nvd-CVE-2026-4242"
     assert threat.title == "CVE-2026-4242"
     assert threat.summary == "Privilege escalation in sample package manager."
 

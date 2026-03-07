@@ -44,7 +44,7 @@ def test_otx_indicator_normalization_for_common_indicator_types(
 ) -> None:
     threat = normalize_otx_indicator(payload)
 
-    assert threat.id.startswith(f"otx:{indicator_type}:")
+    assert threat.id.startswith(f"otx-{indicator_type}-")
     assert len(threat.indicators) == 1
     assert {
         "type": threat.indicators[0].type,

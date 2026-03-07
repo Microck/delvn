@@ -13,7 +13,7 @@ def test_normalize_rss_item_uses_stable_rss_prefix() -> None:
 
     threat = normalize_rss_item(payload)
 
-    assert threat.id.startswith("rss:")
+    assert threat.id.startswith("rss-")
     assert threat.source == "rss"
 
 

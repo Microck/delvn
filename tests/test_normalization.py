@@ -28,7 +28,7 @@ def test_normalize_nvd_cve_returns_stable_unified_shape() -> None:
     threat = normalize_nvd_cve(payload)
 
     assert isinstance(threat, UnifiedThreat)
-    assert threat.id == "nvd:CVE-2026-1111"
+    assert threat.id == "nvd-CVE-2026-1111"
     assert threat.source == "nvd"
     assert threat.type == "cve"
     assert threat.title
@@ -50,7 +50,7 @@ def test_normalize_otx_indicator_returns_stable_unified_shape() -> None:
     threat = normalize_otx_indicator(payload)
 
     assert isinstance(threat, UnifiedThreat)
-    assert threat.id == "otx:ip:1.2.3.4"
+    assert threat.id == "otx-ip-1-2-3-4"
     assert threat.source == "otx"
     assert threat.type == "indicator"
     assert threat.title
@@ -72,7 +72,7 @@ def test_normalize_rss_item_returns_stable_unified_shape() -> None:
     threat = normalize_rss_item(payload)
 
     assert isinstance(threat, UnifiedThreat)
-    assert threat.id == "bleepingcomputer:bc-article-42"
+    assert threat.id == "bleepingcomputer-bc-article-42"
     assert threat.source == "bleepingcomputer"
     assert threat.type == "news"
     assert threat.title
