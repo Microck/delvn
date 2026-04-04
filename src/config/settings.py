@@ -25,9 +25,6 @@ class Settings(BaseSettings):
     NVD_API_KEY: str | None = None
     OTX_API_KEY: str | None = None
 
-    FOUNDRY_ENDPOINT: str | None = None
-    FOUNDRY_API_KEY: str | None = None
-
     AZURE_OPENAI_ENDPOINT: str | None = None
     AZURE_OPENAI_API_KEY: str | None = None
     AZURE_OPENAI_EMBEDDING_DEPLOYMENT: str | None = None
