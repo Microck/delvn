@@ -69,7 +69,7 @@ def _build_threat(
 ) -> UnifiedThreat:
     return UnifiedThreat.model_validate(
         {
-            "id": "nvd:CVE-2026-0100",
+            "id": "nvd-CVE-2026-0100",
             "source": "nvd",
             "type": "cve",
             "title": title,

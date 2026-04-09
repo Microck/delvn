@@ -53,7 +53,7 @@ class _InMemorySearchStore:
 def test_correlator_pipeline_runs_without_live_azure() -> None:
     threats = [
         {
-            "id": "nvd:CVE-2026-0001",
+            "id": "nvd-CVE-2026-0001",
             "source": "nvd",
             "type": "cve",
             "title": "CVE-2026-0001",
@@ -65,7 +65,7 @@ def test_correlator_pipeline_runs_without_live_azure() -> None:
             "raw": {"source": "nvd"},
         },
         {
-            "id": "otx:ipv4:1.2.3.4",
+            "id": "otx-ipv4-1-2-3-4",
             "source": "otx",
             "type": "indicator",
             "title": "Exploit traffic from 1.2.3.4",
@@ -81,9 +81,9 @@ def test_correlator_pipeline_runs_without_live_azure() -> None:
         },
     ]
     hits_by_source_id = {
-        "nvd:CVE-2026-0001": [
+        "nvd-CVE-2026-0001": [
             {
-                "id": "otx:ipv4:1.2.3.4",
+                "id": "otx-ipv4-1-2-3-4",
                 "source": "otx",
                 "type": "indicator",
                 "score": 0.91,
@@ -92,9 +92,9 @@ def test_correlator_pipeline_runs_without_live_azure() -> None:
                 "content": "CVE-2026-0001 1.2.3.4 exploit malware",
             }
         ],
-        "otx:ipv4:1.2.3.4": [
+        "otx-ipv4-1-2-3-4": [
             {
-                "id": "nvd:CVE-2026-0001",
+                "id": "nvd-CVE-2026-0001",
                 "source": "nvd",
                 "type": "cve",
                 "score": 0.84,
