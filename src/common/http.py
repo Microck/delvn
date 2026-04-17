@@ -6,7 +6,6 @@ from typing import Any
 import httpx
 from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
-
 _RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 DEFAULT_TIMEOUT_SECONDS = 10.0
 DEFAULT_USER_AGENT = "delvn/0.1.0"

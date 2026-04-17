@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime, timezone
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -16,7 +16,7 @@ class BriefEntry(BaseModel):
 
 
 class ExecutiveBrief(BaseModel):
-    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     stack_summary: str = Field(min_length=1)
     top_risks: list[BriefEntry] = Field(default_factory=list)
     notable_mentions: list[BriefEntry] = Field(default_factory=list)

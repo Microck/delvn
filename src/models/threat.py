@@ -57,8 +57,8 @@ class CampaignThreat(ThreatBase):
 
 
 __all__ = [
-    "CampaignThreat",
     "CVEThreat",
+    "CampaignThreat",
     "IndicatorThreat",
     "IndicatorType",
     "ThreatBase",

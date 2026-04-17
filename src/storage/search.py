@@ -7,10 +7,10 @@ from azure.search.documents import SearchClient
 from azure.search.documents.indexes import SearchIndexClient
 from azure.search.documents.indexes.models import (
     HnswAlgorithmConfiguration,
+    SearchableField,
     SearchField,
     SearchFieldDataType,
     SearchIndex,
-    SearchableField,
     SimpleField,
     VectorSearch,
     VectorSearchProfile,

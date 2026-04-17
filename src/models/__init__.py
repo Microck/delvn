@@ -8,8 +8,8 @@ from .threat import (
 )
 
 __all__ = [
-    "CampaignThreat",
     "CVEThreat",
+    "CampaignThreat",
     "IndicatorThreat",
     "IndicatorType",
     "ThreatBase",

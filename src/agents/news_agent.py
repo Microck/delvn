@@ -27,8 +27,7 @@ def _resolve_feeds() -> list[str]:
 
 def _feed_source(url: str) -> str:
     source = urlparse(url).netloc.strip().lower()
-    if source.startswith("www."):
-        source = source[4:]
+    source = source.removeprefix("www.")
     if not source:
         return "rss"
     return source.replace(":", "-")

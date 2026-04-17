@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime, timezone
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
@@ -15,7 +15,7 @@ class CorrelationLink(BaseModel):
     target_id: str = Field(min_length=1)
     confidence: float = Field(ge=0.0, le=1.0)
     reasons: list[str] = Field(default_factory=list)
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     similarity: float | None = None
 
     model_config = ConfigDict(extra="ignore", str_strip_whitespace=True)

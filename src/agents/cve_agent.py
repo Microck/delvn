@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta, timezone
 
 from integrations.nvd import fetch_recent_cves
 from normalization.normalize import normalize_nvd_cve
@@ -8,7 +8,7 @@ from storage.cosmos import CosmosStore
 
 
 def _default_pub_start() -> datetime:
-    return datetime.now(timezone.utc) - timedelta(days=1)
+    return datetime.now(UTC) - timedelta(days=1)
 
 
 def run_cve_collection(

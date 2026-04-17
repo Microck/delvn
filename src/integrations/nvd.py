@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime, timezone
 from typing import Any
 
 from common.http import get_json
@@ -12,9 +12,9 @@ NVD_MAX_RESULTS_PER_PAGE = 2000
 
 def _format_pub_start(pub_start: datetime) -> str:
     if pub_start.tzinfo is None:
-        normalized = pub_start.replace(tzinfo=timezone.utc)
+        normalized = pub_start.replace(tzinfo=UTC)
     else:
-        normalized = pub_start.astimezone(timezone.utc)
+        normalized = pub_start.astimezone(UTC)
 
     return normalized.strftime("%Y-%m-%dT%H:%M:%S.000")
 
@@ -67,7 +67,7 @@ def fetch_recent_cves(
     }
     if pub_start is not None:
         params["pubStartDate"] = _format_pub_start(pub_start)
-        params["pubEndDate"] = _format_pub_start(datetime.now(timezone.utc))
+        params["pubEndDate"] = _format_pub_start(datetime.now(UTC))
 
     headers = _build_headers()
     start_index = 0

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime, timezone
 from typing import Any
 
 from config.user_stack import load_user_stack
@@ -94,7 +94,7 @@ def _rank_key(entry: dict[str, Any]) -> tuple[int, float, str]:
 
 def _iso_now() -> str:
     return (
-        datetime.now(timezone.utc)
+        datetime.now(UTC)
         .replace(microsecond=0)
         .isoformat()
         .replace("+00:00", "Z")

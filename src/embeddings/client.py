@@ -30,7 +30,7 @@ class DeterministicHashEmbeddingClient:
         values: list[float] = []
         block = 0
         while len(values) < self.dim:
-            digest = hashlib.sha256(f"{text}|{block}".encode("utf-8")).digest()
+            digest = hashlib.sha256(f"{text}|{block}".encode()).digest()
             for idx in range(0, len(digest), 4):
                 raw = int.from_bytes(digest[idx : idx + 4], "big")
                 values.append((raw / 0xFFFFFFFF) * 2.0 - 1.0)

@@ -265,8 +265,12 @@ def normalize_rss_item(payload: dict[str, Any]) -> UnifiedThreat:
     summary = _to_str(payload.get("summary") or payload.get("description"))
 
     safe_source = source.replace(":", "-").replace("/", "-").replace(".", "-")
-    safe_id = base_id.replace(":", "-").replace("/", "-").replace(".", "-").replace("?", "-").replace("=", "-")
-    
+    safe_id = (
+        base_id.replace(":", "-").replace("/", "-").replace(".", "-")
+        .replace("?", "-")
+        .replace("=", "-")
+    )
+
     return UnifiedThreat(
         id=f"{safe_source}-{safe_id}",
         source=source,
