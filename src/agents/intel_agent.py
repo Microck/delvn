@@ -6,6 +6,7 @@ from storage.cosmos import CosmosStore
 
 
 def run_intel_collection(*, limit: int = 50) -> dict[str, int]:
+    """Run intel collection."""
     stats: dict[str, int] = {
         "fetched": 0,
         "normalized": 0,

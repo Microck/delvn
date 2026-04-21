@@ -22,6 +22,7 @@ def run_reporting(
     prioritization_output: dict[str, Any] | None = None,
     cosmos_store: CosmosStore | None = None,
 ) -> dict[str, Any]:
+    """Run reporting."""
     data = prioritization_output
     if data is None:
         data = run_prioritization(

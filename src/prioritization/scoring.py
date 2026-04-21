@@ -7,6 +7,7 @@ from models.unified_threat import UnifiedThreat
 
 
 class Relevance(str, Enum):
+    """Relevance, extends str/Enum."""
     HIGH = "HIGH"
     MEDIUM = "MEDIUM"
     LOW = "LOW"
@@ -16,6 +17,12 @@ class Relevance(str, Enum):
 def score_relevance(
     threat: UnifiedThreat, stack: UserStack
 ) -> tuple[Relevance, list[str]]:
+    """
+    Score relevance.
+
+    Args: threat
+    Args: stack
+    """
     content_text = threat.content_text().lower()
 
     product_terms = {value.lower() for value in stack.products if value}

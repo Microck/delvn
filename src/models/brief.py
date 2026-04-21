@@ -6,6 +6,11 @@ from pydantic import BaseModel, ConfigDict, Field
 
 
 class BriefEntry(BaseModel):
+    """
+    BriefEntry, extends BaseModel.
+
+    Attributes: headline, relevance, why_it_matters, evidence, recommended_actions
+    """
     headline: str = Field(min_length=1)
     relevance: str = Field(min_length=1)
     why_it_matters: str = Field(min_length=1)
@@ -16,6 +21,11 @@ class BriefEntry(BaseModel):
 
 
 class ExecutiveBrief(BaseModel):
+    """
+    ExecutiveBrief, extends BaseModel.
+
+    Attributes: generated_at, stack_summary, top_risks, notable_mentions
+    """
     generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     stack_summary: str = Field(min_length=1)
     top_risks: list[BriefEntry] = Field(default_factory=list)

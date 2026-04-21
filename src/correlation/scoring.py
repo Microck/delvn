@@ -12,6 +12,7 @@ def _clamp_01(value: float) -> float:
 def score_correlation(
     *, similarity: float, shared_terms: int, same_source: bool
 ) -> tuple[float, list[str]]:
+    """Score correlation."""
     normalized_similarity = _clamp_01(similarity)
     bounded_shared_terms = max(shared_terms, 0)
 

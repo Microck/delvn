@@ -16,6 +16,7 @@ def run_prioritization(
     include_correlations: bool = True,
     cosmos_store: CosmosStore | None = None,
 ) -> dict[str, Any]:
+    """Run prioritization."""
     if limit <= 0:
         raise ValueError("limit must be greater than zero")
 

@@ -17,6 +17,7 @@ def run_correlation(
     cosmos_store: CosmosStore | None = None,
     search_store: SearchStore | None = None,
 ) -> dict[str, int]:
+    """Run correlation."""
     if limit <= 0:
         raise ValueError("limit must be greater than zero")
     if top_k <= 0:

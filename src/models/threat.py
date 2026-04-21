@@ -8,12 +8,14 @@ from pydantic import BaseModel, ConfigDict, Field
 
 
 class ThreatType(str, Enum):
+    """ThreatType, extends str/Enum."""
     CVE = "cve"
     INDICATOR = "indicator"
     CAMPAIGN = "campaign"
 
 
 class IndicatorType(str, Enum):
+    """IndicatorType, extends str/Enum."""
     DOMAIN = "domain"
     IP = "ip"
     URL = "url"
@@ -22,6 +24,11 @@ class IndicatorType(str, Enum):
 
 
 class ThreatBase(BaseModel):
+    """
+    ThreatBase, extends BaseModel.
+
+    Attributes: id, source, type, title, description, published_at, observed_at, severity
+    """
     id: str = Field(min_length=1)
     source: str = Field(min_length=1)
     type: ThreatType
@@ -38,6 +45,11 @@ class ThreatBase(BaseModel):
 
 
 class CVEThreat(ThreatBase):
+    """
+    CVEThreat, extends ThreatBase.
+
+    Attributes: type, cve_id, cvss_vector, cwe
+    """
     type: Literal[ThreatType.CVE] = ThreatType.CVE
     cve_id: str = Field(min_length=1)
     cvss_vector: str | None = None
@@ -45,12 +57,22 @@ class CVEThreat(ThreatBase):
 
 
 class IndicatorThreat(ThreatBase):
+    """
+    IndicatorThreat, extends ThreatBase.
+
+    Attributes: type, indicator, indicator_type
+    """
     type: Literal[ThreatType.INDICATOR] = ThreatType.INDICATOR
     indicator: str = Field(min_length=1)
     indicator_type: IndicatorType
 
 
 class CampaignThreat(ThreatBase):
+    """
+    CampaignThreat, extends ThreatBase.
+
+    Attributes: type, campaign, aliases
+    """
     type: Literal[ThreatType.CAMPAIGN] = ThreatType.CAMPAIGN
     campaign: str = Field(min_length=1)
     aliases: list[str] = Field(default_factory=list)

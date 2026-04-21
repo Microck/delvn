@@ -6,6 +6,11 @@ from models.brief import BriefEntry, ExecutiveBrief
 
 
 def render_brief_md(brief: ExecutiveBrief) -> str:
+    """
+    Render brief md.
+
+    Args: brief
+    """
     lines: list[str] = [
         "# Executive Threat Brief",
         "",
@@ -38,6 +43,11 @@ def render_brief_md(brief: ExecutiveBrief) -> str:
 
 
 def render_markdown(brief: ExecutiveBrief) -> str:
+    """
+    Render markdown.
+
+    Args: brief
+    """
     return render_brief_md(brief)
 
 

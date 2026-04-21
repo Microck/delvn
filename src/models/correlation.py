@@ -6,10 +6,21 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 def build_correlation_id(source_id: str, target_id: str) -> str:
+    """
+    Build correlation id.
+
+    Args: source_id
+    Args: target_id
+    """
     return f"corr:{source_id}->{target_id}"
 
 
 class CorrelationLink(BaseModel):
+    """
+    CorrelationLink, extends BaseModel.
+
+    Attributes: id, source_id, target_id, confidence, reasons, created_at, similarity
+    """
     id: str = Field(min_length=1)
     source_id: str = Field(min_length=1)
     target_id: str = Field(min_length=1)

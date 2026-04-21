@@ -8,6 +8,11 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class UserStack(BaseModel):
+    """
+    UserStack, extends BaseModel.
+
+    Attributes: products, platforms, exclude, keywords
+    """
     products: list[str] = Field(default_factory=list)
     platforms: list[str] = Field(default_factory=list)
     exclude: list[str] = Field(default_factory=list)
@@ -45,15 +50,22 @@ class UserStack(BaseModel):
         return deduped_values
 
     def match_terms(self) -> set[str]:
+        """Match terms."""
         return {
             value.lower() for value in [*self.products, *self.platforms, *self.keywords]
         }
 
     def exclude_terms(self) -> set[str]:
+        """Exclude terms."""
         return {value.lower() for value in self.exclude}
 
 
 def load_user_stack(path: str = "src/config/user_stack.yaml") -> UserStack:
+    """
+    Load user stack.
+
+    Args: path
+    """
     raw_config = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
     if raw_config is None:
         raw_config = {}

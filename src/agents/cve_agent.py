@@ -17,6 +17,7 @@ def run_cve_collection(
     results_per_page: int = 50,
     store: CosmosStore | None = None,
 ) -> dict[str, int]:
+    """Run cve collection."""
     stats: dict[str, int] = {
         "fetched": 0,
         "normalized": 0,

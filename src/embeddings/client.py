@@ -12,11 +12,13 @@ DEFAULT_AZURE_OPENAI_API_VERSION = "2024-02-01"
 
 
 class EmbeddingClient(Protocol):
+    """Protocol for embedding clients that convert text to vectors."""
     def embed(self, texts: list[str]) -> list[list[float]]: ...
 
 
 @dataclass(slots=True)
 class DeterministicHashEmbeddingClient:
+    """Deterministic hash-based embedding client for environments without Azure OpenAI."""
     dim: int
 
     def __post_init__(self) -> None:
@@ -24,6 +26,7 @@ class DeterministicHashEmbeddingClient:
             raise ValueError("Embedding dimension must be greater than zero")
 
     def embed(self, texts: list[str]) -> list[list[float]]:
+        """Embed a list of texts into vector representations."""
         return [self._embed_one(text) for text in texts]
 
     def _embed_one(self, text: str) -> list[float]:
@@ -41,6 +44,7 @@ class DeterministicHashEmbeddingClient:
 
 
 class AzureOpenAIEmbeddingClient:
+    """Azure OpenAI embedding client using deployed embedding models."""
     def __init__(
         self,
         *,
@@ -57,6 +61,7 @@ class AzureOpenAIEmbeddingClient:
         self._timeout_seconds = timeout_seconds
 
     def embed(self, texts: list[str]) -> list[list[float]]:
+        """Embed a list of texts using Azure OpenAI embeddings API."""
         if not texts:
             return []
 
@@ -78,6 +83,7 @@ class AzureOpenAIEmbeddingClient:
 
 
 def get_embedding_client(settings: Settings | None = None) -> EmbeddingClient:
+    """Get the appropriate embedding client based on configuration."""
     current_settings = settings or get_settings()
 
     has_azure_config = all(

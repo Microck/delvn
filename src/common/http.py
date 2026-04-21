@@ -23,6 +23,7 @@ def build_client(
     headers: Mapping[str, str] | None = None,
     timeout_s: float = DEFAULT_TIMEOUT_SECONDS,
 ) -> httpx.Client:
+    """Build client."""
     base_headers = {
         "User-Agent": DEFAULT_USER_AGENT,
         "Accept": "application/json",
@@ -48,6 +49,11 @@ def get_json(
     headers: Mapping[str, str] | None = None,
     params: Mapping[str, Any] | None = None,
 ) -> Any:
+    """
+    Get json.
+
+    Args: url
+    """
     with build_client(headers=headers) as client:
         response = client.get(url, params=params)
         response.raise_for_status()

@@ -7,6 +7,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    """
+    Settings, extends BaseSettings.
+
+    Attributes: APP_ENV, LOG_LEVEL, COSMOS_ENDPOINT, COSMOS_KEY, COSMOS_DATABASE, COSMOS_CONTAINER_THREATS, COSMOS_CONTAINER_CORRELATIONS, SEARCH_ENDPOINT
+    """
     APP_ENV: str = "dev"
     LOG_LEVEL: str = "INFO"
 
@@ -42,4 +47,5 @@ class Settings(BaseSettings):
 
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:
+    """Get settings."""
     return Settings()

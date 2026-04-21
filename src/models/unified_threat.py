@@ -7,6 +7,11 @@ from pydantic import BaseModel, ConfigDict, Field
 
 
 class ThreatIndicator(BaseModel):
+    """
+    ThreatIndicator, extends BaseModel.
+
+    Attributes: type, value
+    """
     type: str = Field(min_length=1)
     value: str = Field(min_length=1)
 
@@ -14,6 +19,11 @@ class ThreatIndicator(BaseModel):
 
 
 class UnifiedThreat(BaseModel):
+    """
+    UnifiedThreat, extends BaseModel.
+
+    Attributes: id, source, type, title, summary, published_at, observed_at, severity
+    """
     id: str = Field(min_length=1)
     source: str = Field(min_length=1)
     type: str = Field(min_length=1)
@@ -30,6 +40,7 @@ class UnifiedThreat(BaseModel):
     model_config = ConfigDict(extra="ignore", str_strip_whitespace=True)
 
     def content_text(self) -> str:
+        """Content text."""
         parts: list[str] = [self.id, self.title]
         if self.summary:
             parts.append(self.summary)

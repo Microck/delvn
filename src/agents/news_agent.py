@@ -35,6 +35,7 @@ def _feed_source(url: str) -> str:
 
 
 def run_news_collection() -> dict[str, int]:
+    """Run news collection."""
     feeds = _resolve_feeds()
     stats = {
         "feeds": len(feeds),
