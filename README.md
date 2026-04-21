@@ -3,6 +3,8 @@
   <img alt="Delvn" src="docs/brand/logo-horizontal.svg" width="240">
 </picture>
 
+[![CI](https://github.com/Microck/delvn/actions/workflows/ci.yml/badge.svg)](https://github.com/Microck/delvn/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
 **A multi-agent CTI pipeline that turns raw CVE feeds and threat intel into a prioritized executive brief tailored to your stack.**
@@ -12,6 +14,24 @@ Taking its name from the verb **"Delve"**, this project is designed to search de
 Delvn ingests signals from three source families: NVD CVEs, AlienVault OTX intel pulses, and security RSS advisories - correlates related activity using vector similarity, ranks every finding against your declared technology stack, and renders a concise markdown brief a human can act on.
 
 Built for the **Microsoft AI Dev Days Hackathon 2026**.
+
+## Table of Contents
+
+- [How It Works](#how-it-works)
+- [Features](#features)
+- [Quickstart](#quickstart)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Output](#output)
+- [Architecture](#architecture)
+- [Repository Layout](#repository-layout)
+- [Development](#development)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [Security](#security)
+- [License](#license)
+- [Origin](#origin)
 
 ---
 
@@ -276,23 +296,23 @@ flowchart TD
         A1[cve_agent<br>NVD 2.0 API]
         A2[intel_agent<br>AlienVault OTX]
         A3[news_agent<br>Security RSS]
-        end
+    end
 
-        subgraph Storage
+    subgraph Storage
         C1[(Cosmos DB<br>threats container)]
         C2[(Azure AI Search<br>threats index)]
         end
 
-        subgraph Correlation
+    subgraph Correlation
         B1[correlator_agent<br>Embed + HNSW query]
         B2[(Cosmos DB<br>correlations container)]
         end
 
-        subgraph Analysis
+    subgraph Analysis
         D1[prioritizer_agent<br>Stack profile scoring]
         end
 
-        subgraph Output
+    subgraph Output
         E1[reporter_agent<br>Brief assembly]
         E2[render_brief_md<br>Markdown renderer]
         E3[docs/demo_brief.md]
